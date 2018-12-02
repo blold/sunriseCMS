@@ -21,6 +21,9 @@ keystone.init({
 	'custom engine': engine,
 	'view engine': 'ejs',
 
+	'port': 4000,
+	'env': 'production',
+
 	'emails': 'templates/emails',
 
 	'auto update': true,
