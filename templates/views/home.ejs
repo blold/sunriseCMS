@@ -36,9 +36,9 @@
     <div class="container-fluid wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">解决方案</h3>
+          <h3 class="section-title"><%= (home && home.serviceTitle != {}) ? home.serviceTitle : '解决方案' %></h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">提供更有竞争力的产品和服务，为客户创造更大价值</p>
+          <p class="section-description"><%= (home && home.serviceShortDesc != {}) ? home.serviceShortDesc : '提供更有竞争力的产品和服务，为客户创造更大价值' %></p>
         </div>
       </div>
 
@@ -46,30 +46,30 @@
           <div class="row">
             <div class="col-md-4 service-item">
               <div class="service-icon"><i class="fa fa-desktop"></i></div>
-              <h4 class="service-title"><a href="/solutions/antenae">移动通信</a></h4>
-              <p class="service-description">为国内外运营商客户提供移动网络覆盖及行业应用整体解决方案和服务</p>
+              <h4 class="service-title"><a href="/solutions/antenae"><%= (home && home.service1Title != {}) ? home.service1Title : '移动通信' %></a></h4>
+              <p class="service-description"><%= (home && home.service1Desc != {}) ? home.service1Desc : '为国内外运营商客户提供移动网络覆盖及行业应用整体解决方案和服务' %></p>
             </div>
             <div class="col-md-4 service-item">
               <div class="service-icon"><i class="fa fa-picture-o"></i></div>
-              <h4 class="service-title"><a href="/solutions/geologic">地质环境</a></h4>
-              <p class="service-description">采用高频雷达传感器，实时监测滑坡变化动向，提供直观的有价值的自然灾害预警信息，提高预警的效率和准确性，减少生命和财产损失</p>
+              <h4 class="service-title"><a href="/solutions/geologic"><%= (home && home.service2Title != {}) ? home.service2Title : '地质环境' %></a></h4>
+              <p class="service-description"><%= (home && home.service2Desc != {}) ? home.service2Desc : '地质环境' %></p>
             </div>
             <div class="col-md-4 service-item">
               <div class="service-icon"><i class="fa fa-superpowers"></i></div>
-              <h4 class="service-title"><a href="/solutions">水利电力</a></h4>
-              <p class="service-description">大坝安全自动化监测系统实现了监测工程动态数据的采集、传输、数据汇集及设备控制自动化，为用户的现场监控、异地监视提供方便、高效、快捷的服务                </p>
+              <h4 class="service-title"><a href="/solutions"><%= (home && home.service3Title != {}) ? home.service3Title : '水利电力' %></a></h4>
+              <p class="service-description"><%= (home && home.service3Desc != {}) ? home.service3Desc : '大坝安全自动化监测系统实现了监测工程动态数据的采集、传输、数据汇集及设备控制自动化，为用户的现场监控、异地监视提供方便、高效、快捷的服务' %></p>
             </div>
           </div>
           <div class="row">
             <div class="col-md-4 mx-auto service-item">
               <div class="service-icon"><i class="fa fa-car"></i></div>
-              <h4 class="service-title"><a href="/solutions">智能交通</a></h4>
-              <p class="service-description">智能驾驶、雷达测速、无人飞机航拍测距、测速</p>
+              <h4 class="service-title"><a href="/solutions"><%= (home && home.service4Title != {}) ? home.service4Title : '智能交通' %></a></h4>
+              <p class="service-description"><%= (home && home.service4Desc != {}) ? home.service4Desc : '智能驾驶、雷达测速、无人飞机航拍测距、测速' %></p>
             </div>
             <div class="col-md-4 mx-auto service-item">
               <div class="service-icon"><i class="fa fa-industry"></i></div>
-              <h4 class="service-title"><a href="/solutions">石油化工</a></h4>
-              <p class="service-description">雷达物位计在化工装置各类液态介质不同工艺条件下均能实现液位的自动检测，提高了催化剂的生产自动化水平，成效显著</p>
+              <h4 class="service-title"><a href="/solutions"><%= (home && home.service5Title != {}) ? home.service5Title : '石油化工' %></a></h4>
+              <p class="service-description"><%= (home && home.service5Desc != {}) ? home.service5Desc : '雷达物位计在化工装置各类液态介质不同工艺条件下均能实现液位的自动检测，提高了催化剂的生产自动化水平，成效显著' %></p>
             </div>
           </div>
     </div>
@@ -83,8 +83,8 @@
       <div class="row">
         <div class="col-md-4 ">
           <div class="news_title_blc">
-              <h3 class="subscribe-title">新闻中心</h3>
-              <p class="subscribe-text">NEWS</p>
+              <h3 class="subscribe-title"><%= (home && home.subscribeTtile != {}) ? home.subscribeTtile : '新闻中心' %></h3>
+              <p class="subscribe-text"><%= (home && home.subscribeTtile2 != {}) ? home.subscribeTtile2 : 'NEWS' %></p>
           </div>
         </div>
         <div class="col-md-8 subscribe-btn-container">
@@ -93,23 +93,25 @@
               <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <a href="http://www.mwr.gov.cn/ztpd/2017ztbd/sjd/" target="_blank">
-                          <img src="/images/news/water1.jpg" 
+											<!-- <a href="http://www.mwr.gov.cn/ztpd/2017ztbd/sjd/" target="_blank"> -->
+                      <a href="<%= (home && home.subscribeNew1.href != {}) ? home.subscribeNew1.href : 'http://www.mwr.gov.cn/ztpd/2017ztbd/sjd/' %>" target="_blank">
+                          <!-- <img src="/images/news/water1.jpg"  -->
+                          <img src="/uploads/img/<%= home.subscribeNew1.img.filename || '../../images/news/water1.jpg' %>" 
                           style="width: 100%;min-width: 300px; height: 200px;" alt="">
-                          <p>习近平：大国重器必须掌握在我们自己手里</p>
+                          <p><%= (home && home.subscribeNew1.desc != {}) ? home.subscribeNew1.desc : '习近平：大国重器必须掌握在我们自己手里' %></p>
+											</a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="<%= (home && home.subscribeNew2.href != {}) ? home.subscribeNew2.href : 'http://www.cigem.gov.cn/' %>" target="_blank">
+                          <img src="/uploads/img/<%= home.subscribeNew2.img.filename || '../../images/news/environ_1.jpg' %>" style="width: 100%;min-width: 300px; height: 200px;" alt="">
+                          <p><%= (home && home.subscribeNew2.desc != {}) ? home.subscribeNew2.desc : '中国地质环境信息' %></p>
                       </a>
                     </div>
                     <div class="swiper-slide">
-                      <a href="http://www.cigem.gov.cn/" target="_blank">
-                          <img src="/images/news/environ_1.jpg" style="width: 100%;min-width: 300px; height: 200px;" alt="">
-                          <p>中国地质环境信息</p>
+												<a href="<%= (home && home.subscribeNew3.href != {}) ? home.subscribeNew2.href : 'https://www.zhihuichengshi.cn/' %>" target="_blank">
+                          <img src="/uploads/img/<%= home.subscribeNew3.img.filename || '../../images/news/smart_city2.jpg' %>" style="width: 100%;min-width: 300px; height: 200px;" alt="">
+                          <p><%= (home && home.subscribeNew3.desc != {}) ? home.subscribeNew3.desc : '智慧城市，让生活更美好' %></p>
                       </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://www.zhihuichengshi.cn/" target="_blank">
-                            <img src="/images/news/smart_city2.jpg" style="width: 100%;min-width: 300px; height: 200px;" alt="">
-                            <p>智慧城市，让生活更美好</p>
-                        </a>
                       </div>
                   </div>
                   <!-- Add Pagination -->
@@ -128,60 +130,59 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">方案展示</h3>
+          <h3 class="section-title"><%= (home && home.porfolioTitle != {}) ? home.porfolioTitle : '方案展示' %></h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">高起点、高标准是桑瑞公司的立足之本</p>
+          <p class="section-description"><%= (home && home.porfolioTitle != {}) ? home.porfolioTitle : '高起点、高标准是桑瑞公司的立足之本' %></p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-4">
-          <a class="portfolio-item bordEffe" style="background-image: url(/images/cases/cases_1.png);" href="/cases">
+          <!-- <a class="portfolio-item bordEffe" style="background-image: url(/images/cases/cases_1.png);" href="/cases"> -->
+          <a class="portfolio-item bordEffe" style="background-image: url(/uploads/img/<%= home.porfolio1.img.filename || '../../images/cases/cases_1.png'%>)" href="/cases">
             <div class="details">
               <h4></h4>
               <span>了解更多</span>
             </div>
           </a>
           <h4 class="card cases_title">  
-            <a href="/cases" class="effect-hover_div hvr-underline-from-center">移动通信</a> 
-            <!-- <button class="btn btn-primary" role='button'>移动通信</button> -->
+            <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio1.title != {}) ? home.porfolio1.title : '移动通信' %></a> 
           </h4>
         </div>
 
         <div class="col-md-4">
-          <a class="portfolio-item bordEffe" style="background-image: url(/images/cases/cases_2.png);" href="/cases">
+          <a class="portfolio-item bordEffe" style="background-image: url(/uploads/img/<%= home.porfolio1.img.filename || '../../images/cases/cases_2.png'%>)" href="/cases">
             <div class="details">
               <span>了解更多</span>
             </div>
           </a>
-          <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center">地质灾害</a> </h4>
+          <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio2.title != {}) ? home.porfolio2.title : '地质灾害' %></a> </h4>
         </div>
 
         <div class="col-md-4">
-          <a class="portfolio-item bordEffe" style="background-image: url(/images/cases/cases_3.png);" href="/cases">
+          <a class="portfolio-item bordEffe" style="background-image: url(/uploads/img/<%= home.porfolio1.img.filename || '../../images/cases/cases_3.png'%>)" href="/cases">
             <div class="details">
               <span>了解更多</span>
             </div>
           </a>
-          <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center">水利水电</a> </h4>
+          <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio3.title != {}) ? home.porfolio3.title : '水利水电' %></a> </h4>
         </div>
 
         <div class="col-md-4 mx-auto">
-          <a class="portfolio-item bordEffe" style="background-image: url(/images/cases/cases_4.png);" href="/cases">
+          <a class="portfolio-item bordEffe" style="background-image: url(/uploads/img/<%= home.porfolio1.img.filename || '../../images/cases/cases_4.png'%>)" href="/cases">
             <div class="details">
               <span>了解更多</span>
             </div>
           </a>
-          <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center">交通</a> </h4>
+          <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio4.title != {}) ? home.porfolio4.title : '交通' %></a> </h4>
         </div>
         <div class="col-md-4 mx-auto">
-            <a class="portfolio-item bordEffe" style="background-image: url(/images/cases/cases_5.png);" href="/cases">
+            <a class="portfolio-item bordEffe" style="background-image: url(/uploads/img/<%= home.porfolio1.img.filename || '../../images/cases/cases_5.png'%>)" href="/cases">
               <div class="details">
                 <span>了解更多</span>
               </div>
             </a>
-            <!-- <h4 class="card cases_title">石油化工</h4> -->
-            <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center">石油化工</a> </h4>
+            <h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio5.title != {}) ? home.porfolio5.title : '石油化工' %></a> </h4>
           </div>
       </div>
     </div>
@@ -201,11 +202,11 @@
         <div class="col-md-6 col-xs-12 wow fadeInLeft">
           <div class="ads_left_blc">
             <figure class="effect-oscar">
-  						<img src="/images/news/ind_right1.jpg" alt="images"/>
+  						<img src="/uploads/img/<%= home.new1.img.filename || '../../images/news/ind_right1.jpg' %>" alt="images"/>
   						<figcaption>
   							<div class="ads_first_left_blc">
-  								<h2>自动驾驶汽车到底需要哪些类型的传感器？</h2>
-  								<p>在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少。</p>
+  								<h2><%= (home && home.new1.title != {}) ? home.new1.title : '自动驾驶汽车到底需要哪些类型的传感器？' %></h2>
+  								<p><%= (home && home.new1.desc != {}) ? home.new1.desc : '在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少' %></p>
   							</div>
   							<a href="/news">View more</a>
   						</figcaption>			
@@ -217,10 +218,10 @@
             <div class="col-xs-12">
               <div class="ads_right1_blc">
       					<figure class="effect-oscar">
-      						<img src="/images/news/in_right_1.jpg" alt="img09"/>
+      						<img src="/uploads/img/<%= home.new2.img.filename || '../../images/news/in_right_1.jpg' %>" alt="img09"/>
       						<figcaption>
-      							<h2>华为牵引5G核心网创新发展</h2>
-      							<p>MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展</p>
+      							<h2><%= (home && home.new2.title != {}) ? home.new2.title : '华为牵引5G核心网创新发展' %></h2>
+      							<p><%= (home && home.new2.desc != {}) ? home.new2.desc : 'MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展' %></p>
       							<a href="/news">View more</a>
       						</figcaption>			
       					</figure>
@@ -229,10 +230,10 @@
             <div class="col-xs-12">
               <div class="ads_right2_blc">
       					<figure class="effect-oscar">
-      						<img src="/images/news/in_right_2.jpg" alt="img09"/>
+      						<img src="/uploads/img/<%= home.new3.img.filename || '../../images/news/in_right_2.jpg' %>" alt="img09"/>
       						<figcaption>
-      							<h2>激光雷达、计算机视觉和雷达谁会赢？</h2>
-      							<p>由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？</p>
+      							<h2><%= (home && home.new3.title != {}) ? home.new3.title : '激光雷达、计算机视觉和雷达谁会赢？' %></h2>
+      							<p><%= (home && home.new3.title != {}) ? home.new3.title : '由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？' %></p>
       							<a href="/news">View more</a>
       						</figcaption>			
       					</figure>
@@ -251,14 +252,31 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">我们的团队</h3>
+          <h3 class="section-title"><%= (home && home.teamTitle != {}) ? home.teamTitle : '我们的团队' %></h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">以人为本，是企业的核心</p>
+          <p class="section-description"><%= (home && home.teamDesc != {}) ? home.teamDesc : '以人为本，是企业的核心' %></p>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+				<% if(teams && teams.length > 0){%>
+					<% teams.forEach(function(el){%>
+					<div class="col-md-3">
+						<div class="member wow flipInX">
+							<div class="pic"><img src="/uploads/img/team/<%= el.img.filename %>" alt=""></div>
+							<h4><%= el.name %></h4>
+							<span><%= el.title %></span>
+							<div class="social">
+								<a href=""><i class="fa fa-qq"></i></a>
+								<a href=""><i class="fa fa-wechat"></i></a>
+								<a href=""><i class="fa fa-weibo"></i></a>
+								<a href=""><i class="fa fa-linkedin"></i></a>
+							</div>
+						</div>
+					</div>
+					<%})%>
+				<%}%>
+        <!-- <div class="col-md-3">
           <div class="member wow flipInX">
             <div class="pic"><img src="/images/team/boss_1.jpg" alt=""></div>
             <h4>王学军</h4>
@@ -312,7 +330,7 @@
               <a href=""><i class="fa fa-linkedin"></i></a>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -332,9 +350,9 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">联系我们</h3>
+          <h3 class="section-title"><%= (home && home.contactTitle != {}) ? home.contactTitle : '联系我们' %></h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">能人所未能、愿人所不愿、思人所匪思</p>
+          <p class="section-description"><%= (home && home.contactDesc != {}) ? home.contactDesc : '能人所未能、愿人所不愿、思人所匪思' %></p>
         </div>
       </div>
 
@@ -343,17 +361,17 @@
           <div class="info">
             <div>
               <i class="fa fa-map-marker"></i>
-              <p>广州市高新技术产业开发区<br>科学城开源大道182号</p>
+              <p><%= (home && home.address != {}) ? home.address : '广州市高新技术产业开发区科学城开源大道182号' %></p>
             </div>
 
             <div>
               <i class="fa fa-envelope"></i>
-              <p>market@sangrui.com</p>
+              <p><%= (home && home.contactEmail != {}) ? home.contactEmail : 'market@sangrui.com' %></p>
             </div>
 
             <div>
               <i class="fa fa-phone"></i>
-              <p>(+86)2022203555</p>
+              <p><%= (home && home.contactPhone != {}) ? home.contactPhone : '(+86)2022203555' %></p>
             </div>
 
           </div>

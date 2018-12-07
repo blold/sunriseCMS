@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var Home = keystone.list('home');
+var Team = keystone.list('team');
 var MainHeader = keystone.list('mainHeader');
 
 exports = module.exports = function (req, res) {
@@ -16,12 +17,28 @@ exports = module.exports = function (req, res) {
 		MainHeader.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
 			// let data = { data: results[0] };
 			locals.header = results[0];
-			console.log(locals.header);
+			// console.log(locals.header);
 		});
 		next();
 	});
-	// Render the view
-	// view.render('index');
-	// view.render('mainHeader');
+	view.on('init', function (next) {
+		Home.model.findOne({}).sort({ createdAt: 'desc' }).exec(function (err, result) {
+			let teamArray = [result.team1, result.team2, result.team3, result.team4];
+			Team.model.find({ _id: { $in: teamArray } }).exec(function (err, results) {
+				console.log(results);
+				locals.teams = results;
+				next();
+			});
+			// console.log(teamArray);
+			// next();
+		});
+	});
+	view.on('init', function (next) {
+		Home.model.findOne({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+			console.log(results);
+		});
+		next();
+	});
+
 	view.render('home');
 };

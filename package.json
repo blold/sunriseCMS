@@ -2,22 +2,26 @@
   "name": "sunrise",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "start": "if-env NODE_ENV=production ?? npm run start:prod || npm run start:dev",
+    "start:dev": "NODE_ENV=development node_modules/.bin/nodenv keystone.js",
+    "start:prod": "NODE_ENV=production node keystone.js"
+  },
   "dependencies": {
+    "async": "2.1.4",
+    "dotenv": "^4.0.0",
+    "if-env": "^1.0.4",
     "keystone": "4.0.0-beta.5",
-    "lodash": "^4.13.1",
-    "pug": "2.0.0-beta11",
-    "dotenv": "4.0.0",
     "keystone-email": "1.0.5",
-    "async": "2.1.4"
+    "lodash": "^4.13.1",
+    "node-env-run": "^3.0.2",
+    "pug": "2.0.0-beta11"
   },
   "devDependencies": {
     "ejs-locals": "^1.0.2",
     "eslint": "3.15.0",
     "eslint-config-keystone": "3.0.0",
     "eslint-plugin-react": "^5.1.1"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "start": "node keystone.js"
   }
 }

@@ -36,9 +36,16 @@ var routes = {
 exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.home);
+	app.get('/solutions', routes.views.solutionIndex);
+	app.get('/team', routes.views.team);
+	app.get('/solutions/antenae', routes.views.antenae);
 
 	app.get('/test', function (req, res, next) {
 		res.send('Test keystoneRuning!', { page_title: 'about' });
+	});
+
+	app.get('/public/uploads/files/antenae/series/:id', function (req, res, next) {
+		res.download(`public/uploads/files/antenae/series/${req.params.id}`);
 	});
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

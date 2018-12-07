@@ -1,0 +1,115 @@
+.banner{
+  padding: 10px 10px 10px 20px;
+}
+
+body{
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("/images/solutions/antenae_bg1.jpg") fixed center center;
+  background-size: cover;
+}
+
+.jumbotron{
+  background-color: transparent;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 0;
+}
+
+.content_p{
+  font-size: .85rem;
+}
+
+.antenae_line_blc{
+  padding: 0 15px 0 15px;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.card{
+  margin-bottom: 2rem;
+
+  img{
+    max-width: 255px;
+    height: 135px;
+  }
+}
+
+.antenae_line_blc .card .card-body .card-text{
+  margin-bottom: 0;
+}
+
+.antenae_line_blc .card{
+
+  .card-body{
+    height: 230px;
+  }
+}
+
+.radar_blc{
+  padding: 2rem 15px 40px 15px;
+}
+
+
+.card h4.card-title{
+  font-size: 19px;
+  font-weight: bold;
+  min-height: 40px
+}
+
+.download_blc{
+  text-align: center;
+  padding: 10px;
+}
+
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -100%; /* 12 columns */
+  }
+
+  .row-offcanvas-right.active
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -100%; /* 12 columns */
+  }
+
+  .row-offcanvas-left.active
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}

@@ -1,0 +1,106 @@
+<% include ../layouts/sub/header%>
+<link href="/styles/site/antenae.css" rel="stylesheet">
+
+<div class="banner container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="#" onclick="window.location.href = '/';">主页</a>
+            <i class="fa fa-angle-right"></i>
+            <a href="/solutions">解决方案</a>
+            <i class="fa fa-angle-right"></i>
+            <span>通讯</span>
+        </div>
+    </div>
+</div> 
+
+<section id="antenae_blc">
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-12 col-md-9">
+                <div class="jumbotron">
+                    <h1><%= (antenae && antenae.antenaeTitle != {}) ? antenae.antenaeTitle : '通讯领域' %></h1>
+                    <p>
+						<%= (antenae && antenae.antenaeDesc != {}) ? antenae.antenaeDesc : '桑瑞通信始终以技术创新为企业持续发展的核心，先后成功开发了达到国际先进水平的GSM、CDMA、3G、4G、LTE以及WiFi / WiMAX基站电调天线及其集中控制优化系统。通信产品主要包括移动通信基站天线、一体化美化天线、美化外罩产品等。同时，公司可根据客户需求，为其量身定做包括网络架构设计、产品配置选型、检测及优化服务等内容的移动覆盖综合解决方案。' %>
+                    </p>
+                </div>
+                <div class="antenae_line_blc">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3><%= (antenae && antenae.mainTitle != {}) ? antenae.mainTitle : '通讯天线' %></h3>
+						</div>
+						<% if(antenaeSeries && antenaeSeries[0].solutionTitle != {}){ %>
+							<% antenaeSeries.forEach(function(el){ %>
+								<div class="col-md-4 col-xs-12">
+									<div class="card wow flipInX">
+										<img class="card-img-top" src="/uploads/img/antenae/series/<%= el.solutionImg.filename %>" alt="Card image cap">
+										<div class="card-body">
+											<h4 class="card-title"><%= el.solutionTitle || '系列名称' %></h4>
+											<p class="card-text content_p">
+												<%= el.solutionDesc || '系列描述' %>
+											</p>
+										</div>
+										<div class="download_blc">
+											<a href="../public/uploads/files/antenae/series/<%= el.solutionFile.filename %>" target="_blank">下载文档</a>
+										</div>
+									</div>
+								</div> 
+							<% }) %>
+						<% } %>
+                        <!-- <div class="col-md-4 col-xs-12">
+                            <div class="card wow flipInX">
+                                <img class="card-img-top" src="/images/solutions/antenae_1_2.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">普通天线系列</h4>
+                                    <p class="card-text content_p">
+                                            移动通信基站天线、一体化美化天线、美化外罩、射频器件、室内分布天线等。同时，公司可根据客户需求，为其量身定做包括网络架构设计、产品配置选型、检测及优化服务等内容的移动覆盖综合解决方案。
+                                    </p>
+                                </div>
+                                <div class="download_blc">
+                                    <a href="../files/普通天线系列.pdf" target="_blank">下载文档</a>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-4 col-xs-12">
+                            <div class="card wow flipInX">
+                                <img class="card-img-top" src="/images/solutions/antenae_1_4.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">一体美化天线系列</h4>
+                                    <p class="card-text content_p">
+                                            移动通信基站天线、一体化美化天线、美化外罩、射频器件、室内分布天线等。同时，公司可根据客户需求，为其量身定做包括网络架构设计、产品配置选型、检测及优化服务等内容的移动覆盖综合解决方案。
+                                    </p>
+                                </div>
+                                <div class="download_blc">
+                                    <a href="../files/特种天线系列.pdf" target="_blank">下载文档</a>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-4 col-xs-12">
+                            <div class="card wow flipInX">
+                                <img class="card-img-top" src="/images/solutions/antenae_1_3.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">美化外罩产品系列</h4>
+                                    <p class="card-text content_p">
+                                            移动通信基站天线、一体化美化天线、美化外罩、射频器件、室内分布天线等。同时，公司可根据客户需求，为其量身定做包括网络架构设计、产品配置选型、检测及优化服务等内容的移动覆盖综合解决方案。
+                                    </p>
+                                </div>
+                                <div class="download_blc">
+                                    <a href="../files/美化外罩交流资料.pdf" target="_blank">下载文档</a>
+                                </div>
+                            </div>
+                        </div>           -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+              <div class="list-group">
+                <a href="#" class="list-group-item active">最新产品文档_1</a>
+                <a href="#" class="list-group-item">最新产品文档_2</a>
+                <a href="#" class="list-group-item">最新产品文档_3</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+<% include ../layouts/sub/footer%>

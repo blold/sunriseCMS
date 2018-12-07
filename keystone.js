@@ -10,6 +10,9 @@ var engine = require('ejs-locals');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+// console.log(process.env.NODE_ENV);
+// console.log(process.env.FOO);
+
 keystone.init({
 	'name': 'sunrise',
 	'brand': 'sunrise',
@@ -21,8 +24,8 @@ keystone.init({
 	'custom engine': engine,
 	'view engine': 'ejs',
 
-	'port': 4000,
-	'env': 'production',
+	'port': process.env.APP_ENV_PORT,
+	'env': process.env.NODE_ENV,
 
 	'emails': 'templates/emails',
 
@@ -57,6 +60,18 @@ keystone.set('nav', {
 		key: 'home',
 		path: '/keystone/homes',
 	}],
+	Antenae: [
+		{
+			label: 'Anteanse',
+			key: 'antenae',
+			path: '/keystone/antenaes',
+		},
+		{
+			label: 'AnteanseSeries',
+			key: 'antenae_series',
+			path: '/keystone/antenae_series',
+		},
+	],
 });
 
 // Start Keystone to connect to your database and initialise the web server
