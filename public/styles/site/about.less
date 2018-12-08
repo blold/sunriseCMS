@@ -1,0 +1,63 @@
+@footer_base_color: #999;
+@word_white: #fff;
+@word_black: black;
+@word_blud:  #15b0e8;
+
+body{
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("/images/about/about_bg.jpeg") fixed center center;
+    background-size: cover;
+}
+
+.banner{
+  padding: 10px 10px 10px 20px;
+}
+
+#learnMore_blc{
+    display: none;
+}
+
+.introAbout_blc{
+    padding: 20px
+}
+
+.introAbout_blc p{
+    margin: 0;
+}
+
+.switchClick{
+    text-decoration: underline;
+}
+
+.achieve_blc{
+    margin-top: 50px;
+}
+
+.achieve_inner_blc{
+    text-align: center;
+    /* background-color: #fff; */
+    margin: 0 0 30px;
+    background: rgba(0,0,0,0.04);
+}
+
+.achieve_inner_blc .content{
+    padding: 30px
+}
+
+.content span{
+    font-size: 60px;
+    font-family: "akkuratpro-light", Helvetica, Arial, sans-serif;
+}
+
+.content h4{
+    border-bottom: 1px solid rgba(0,0,0, 0.4);
+    color: @word_blud;
+    padding: 5px;
+}
+
+.word_black{
+    color: black;
+  }
+
+.switchClick{
+  &:extend(.word_black);
+}

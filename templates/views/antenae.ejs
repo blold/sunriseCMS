@@ -94,9 +94,11 @@
             
             <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
               <div class="list-group">
-                <a href="#" class="list-group-item active">最新产品文档_1</a>
-                <a href="#" class="list-group-item">最新产品文档_2</a>
-                <a href="#" class="list-group-item">最新产品文档_3</a>
+				<% if(antenaeOthers[0].otherFileName && antenaeOthers[0].otherFileName != {}){ %>
+					<% antenaeOthers.forEach(function(el){%>
+						<a href="../public/uploads/files/antenae/other/<%= el.otherFile.filename %>" class="list-group-item"><%= el.otherFileName %></a>
+					<% }) %>
+				<%}%>
               </div>
             </div>
         </div>

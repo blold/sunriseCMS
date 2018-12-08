@@ -5,36 +5,36 @@
 	<div class="container footer">
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
-				<label class="foot_label">解决方案</label>
+				<label class="foot_label"><%= (footer && footer.solutionsMainTitle != {}) ? footer.solutionsMainTitle : '解决方案' %></label>
 				<ul class="list-group">
-					<li ><a class="effect-underline" href="/solutions/antenae">通信</a></li>
-					<li ><a class="effect-underline " href="/solutions/geologic">地质环境</a></li>
-					<li ><a class="effect-underline devMode" href="javascript:void(0)" >水利电力</a></li>
-					<li ><a class="effect-underline devMode" href="javascript:void(0)">智能交通</a></li>
-					<li ><a class="effect-underline devMode" href="javascript:void(0)">石油化工</a></li>
+					<li ><a class="effect-underline" href="/solutions/antenae"><%= (footer && footer.solutions1 != {}) ? footer.solutions1 : '通信' %></a></li>
+					<li ><a class="effect-underline " href="/solutions/geologic"><%= (footer && footer.solutions2 != {}) ? footer.solutions2 : '地质环境' %></a></li>
+					<li ><a class="effect-underline devMode" href="javascript:void(0)" ><%= (footer && footer.solutions3 != {}) ? footer.solutions3 : '水利电力' %></a></li>
+					<li ><a class="effect-underline devMode" href="javascript:void(0)"><%= (footer && footer.solutions4 != {}) ? footer.solutions4 : '智能交通' %></a></li>
+					<li ><a class="effect-underline devMode" href="javascript:void(0)"><%= (footer && footer.solutions5 != {}) ? footer.solutions5 : '石油化工' %></a></li>
 				</ul>
 			</div>
 			
 			<div class="col-md-3 col-sm-6">
-				<label class="foot_label">关于桑瑞</label>
+				<label class="foot_label"><%= (footer && footer.aboutMainTitle != {}) ? footer.aboutMainTitle : '关于桑瑞' %></label>
 				<ul class="list-group">
-					<li class="footer_li"><a class="effect-underline" href="/about">公司简介</a></li>
+					<li class="footer_li"><a class="effect-underline" href="/about"><%= (footer && footer.about1 != {}) ? footer.about1 : '公司简介' %></a></li>
 					<!-- <li class=""><a href="">展会活动</a></li> -->
-					<li class="footer_li"><a class="effect-underline" href="/news">新闻资讯</a></li>
+					<li class="footer_li"><a class="effect-underline" href="/news"><%= (footer && footer.news != {}) ? footer.news : '新闻资讯' %></a></li>
 				</ul>
 			</div>
 			
 			<div class="col-md-3 col-sm-6">
-				<label class="foot_label">相关链接</label>
+				<label class="foot_label"><%= (footer && footer.relatedMainTitle != {}) ? footer.relatedMainTitle : '相关链接' %></label>
 				<ul class="list-group">
-					<li class="footer_li"><a class="effect-underline" href="./#contact">联系我们</a></li>
-					<li class="footer_li"><a class="effect-underline devMode" href="javascript:void(0)">海外业务</a></li>
+					<li class="footer_li"><a class="effect-underline" href="./#contact"><%= (footer && footer.contactUs != {}) ? footer.contactUs : '联系我们' %></a></li>
+					<li class="footer_li"><a class="effect-underline devMode" href="javascript:void(0)"><%= (footer && footer.overseeBusiness != {}) ? footer.overseeBusiness : '海外业务' %></a></li>
 				</ul>
 			</div>
 			
 			<div class="col-md-3 col-sm-6">
-				<label class="foot_label">微信公众号</label>
-				<img src="/images/QR_code.jpg" style="width: 35%;"/>
+				<label class="foot_label"><%= (footer && footer.wechatTitle != {}) ? footer.wechatTitle : '微信公众号' %></label>
+				<img src="/uploads/img/normal/<%= footer.wechatImg.filename || '../../../images/QR_code.jpg' %>" style="width: 35%;"/>
 			</div>
 			
 			<div class="col-md-12">
