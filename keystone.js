@@ -67,9 +67,31 @@ keystone.set('nav', {
 			path: '/keystone/antenaes',
 		},
 		{
-			label: 'AnteanseSeries',
+			label: 'AntenaeSeries',
 			key: 'antenae_series',
 			path: '/keystone/antenae_series',
+		},
+		{
+			label: 'AntenaeOther',
+			key: 'antenae_other',
+			path: '/keystone/antenae_others',
+		},
+	],
+	Geologic: [
+		{
+			label: 'Geologic',
+			key: 'geologic',
+			path: '/keystone/geologics',
+		},
+		{
+			label: 'GeologicSeries',
+			key: 'geologic_series',
+			path: '/keystone/geologic_series',
+		},
+		{
+			label: 'GeologicOther',
+			key: 'geologic_other',
+			path: '/keystone/geologic_others',
 		},
 	],
 });
