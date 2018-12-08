@@ -1,0 +1,86 @@
+<% include ../layouts/sub/header%>
+<link href="/styles/site/about.css" rel="stylesheet">
+
+<div class="banner container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href=".">主页</a>
+            <i class="fa fa-angle-right"> </i>
+            <span>简介</span>
+        </div>
+    </div>
+</div>  
+ 
+<section class="introAbout_blc">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <h2><%= (about && about.aboutTitle != {}) ? about.aboutTitle : '公司介绍' %></h2>
+                <h4><%= (about && about.aboutSubTitle != {}) ? about.aboutSubTitle : '我们是谁？' %></h4>
+                <p>
+										<%= (about && about.aboutDesc1 != {}) ? about.aboutDesc1 : '广州桑瑞通信设备有限公司是一家专注于移动通信射频领域研发、生产、销售和服务于一体的国家级高新技术企业。公司的研发中心与生产中心占地面积约30000平方米，公司现有技术人员60人，其中研究生以上学历15人，本科学历20人，大专学历25人。研发中心分为雷达探测事业部与基站天线事业部两个部门。研发中心经过近10年的产品研发积累了丰富经验。现已拥有射频方面核心技术知识产权近30项，在射频研发设计和批量生产方面有较深的技术积累和丰富的经验。' %>                                                                                                                                                                                                                            
+								</p>
+								<% console.log(about.aboutDesc2)%>
+								<% if(about.aboutDesc2){ %>
+									<a class="switchClick" id="learnMoreButton" href="javascript:void(0)"><i class="fa fa-plus"></i>了解更多</a>
+								<% }%>
+            </div>
+            <div class="col-md-6 col-xs-12 text-center">
+                <img src="/images/about/about_logo0.png" style="max-width: 500px"></img>
+            </div>
+        </div>
+        <div class="row" id="learnMore_blc">
+            <div class="col-md-12">
+                <p id="learnMoreContent">
+										<br>
+										<%= (about && about.aboutDesc2 != {}) ? about.aboutDesc2 : '在研发技术创新方面，公司通过多种形式吸引高层次人才到企业从事研究开发工作，提高企业技术创新能力，使一大批具有创新精神、年富力强的优秀中青年人才脱颖而出，在高科技岗位上实现着自己的人生价值。在技术创新投入上，突出企业的主体地位，每年以不低于销售收入的10%投入到科技研发上来，通过各项创新战略的有效实施，我司基站天线产品质量均处于业内领先地位，同时雷达探测事业部自主研发的24GHz雷达探测传感器已实现批量应用。高起点、高标准是桑瑞公司立足之本。 桑瑞通信在2018年4月分别组建成立广州桑瑞环保科技有限公司和广州桑瑞科技有限公司。 桑瑞科技将传承桑瑞通信的天线制造理念，继续与运营商合作开发和生产适合国内外不同用户需求的天线产品，并将提供更加专业和个性化的服务。桑瑞环保将聚焦战略，自主研发，以用户需求和前沿技术驱动创新，致力于提供高精度数据的采集和应用解决方案，提供雷达传感器系列产品，应用于地质灾害环境监测、水库大坝监测、智能驾驶、雷达测速、无人飞机航拍测距、测速；提供非接触性的雷达物位计，解决石油化工行业中的液体、浆料及颗粒物的物位精准测量问题。桑瑞通信将始终秉承“专业、精致、创新”的企业精神，与我们的客户及合作伙伴一道携手并进、共创辉煌！' %> 
+                </p>
+                <a class="switchClick" id="hideButton" href="javascript:void(0)"><i class="fa fa-minus"></i>收起</a>
+            </div>
+        </div>
+
+        <div class="achieve_blc">
+            <h4><%= (about.visionTitle && about.visionTitle != {}) ? about.visionTitle : '我们的理念' %></h4>
+            <div class="row achieve_inner_blc bordEffe">
+                <div class="col-md-4 col-sm-4">
+                    <div class="content">
+                        <h4><%= (about.vision1Title && about.vision1Title != {}) ? about.vision1Title : '专业' %></h4>
+                        <p><%= (about.vision1Desc && about.vision1Desc != {}) ? about.vision1Desc : '公司从事多年射频和雷达产品研发、制造与销售。现有技术人员60人，其中研究生以上学历15人，本科学历20人，大专学历25人。' %></p>
+                        <!-- <span>6,036</span>
+                        <h5>亿元人名币</h5> -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="content">
+                        <h4><%= (about.vision2Title && about.vision2Title != {}) ? about.vision2Title : '精致' %></h4>
+                        <!-- <span>475</span>
+                        <h5>亿元人名币</h5> -->
+                        <p><%= (about.vision2Desc && about.vision2Desc != {}) ? about.vision2Desc : '产品+服务，自主研发，满足大众客户需求，同时发展定制性业务.' %></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="content">
+                        <h4><%= (about.vision3Title && about.vision3Title != {}) ? about.vision3Title : '创新' %></h4>
+                        <p><%= (about.vision3Desc && about.vision3Desc != {}) ? about.vision3Desc : '拥有射频方面核心技术知识产权近30项，在射频研发设计和批量生产方面有较深的技术积累和丰富的经验。' %></p>
+                        <!-- <span>963</span>
+                        <h5>亿元人名币</h5> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+
+
+<script>
+    $("#learnMoreButton").click(function(){
+        $("#learnMore_blc").slideDown("show");
+        $("#learnMoreButton").hide();
+    })
+    $("#hideButton").click(function(){
+        $("#learnMore_blc").slideUp("show")
+        $("#learnMoreButton").show();
+    })
+</script>
+
+<% include ../layouts/sub/footer%>
