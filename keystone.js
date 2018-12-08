@@ -44,6 +44,7 @@ keystone.import('models');
 keystone.set('locals', {
 	_: require('lodash'),
 	env: keystone.get('env'),
+	moment: require('moment'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
 });

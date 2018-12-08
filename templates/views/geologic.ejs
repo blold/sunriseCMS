@@ -95,11 +95,11 @@
             </div>
             <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
                 <div class="list-group">
-										<% if(geologicOthers[0].otherFileName && geologicOthers[0].otherFileName != {}){ %>
-											<% geologicOthers.forEach(function(el){%>
-												<a href="../public/uploads/files/geologic/other/<%= el.otherFile.filename %>" class="list-group-item"><%= el.otherFileName %></a>
-											<% }) %>
-										<%}%>
+					<% if(geologicOthers[0].otherFileName && geologicOthers[0].otherFileName != {}){ %>
+						<% geologicOthers.forEach(function(el){%>
+							<a href="../public/uploads/files/geologic/other/<%= el.otherFile.filename %>" class="list-group-item hover_blue"><%= el.otherFileName %></a>
+						<% }) %>
+					<%}%>
                     <!-- <a href="#" class="list-group-item active">最新产品文档_1</a>
                     <a href="#" class="list-group-item">最新产品文档_2</a>
                     <a href="#" class="list-group-item">最新产品文档_3</a> -->

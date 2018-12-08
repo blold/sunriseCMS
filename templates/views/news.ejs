@@ -1,0 +1,195 @@
+<% include ../layouts/sub/header %>
+<link href="/styles/site/news.css" rel="stylesheet">
+
+
+<div class="banner container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href=".">主页</a>
+            <i class="fa fa-angle-right"></i>
+            <span>新闻资讯</span>
+        </div>
+    </div>
+</div>    
+
+<section class="news_blc">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+								<% if(news && news[0].shortTitle){%>
+									<% news.forEach(function(el){ %>
+										<div class="component_item_blc wow fadeInLeft">
+												<a href="#" class="innerComponent bordEffe " id="new2">
+														<div class="leftBlc">
+																<div class="date_blc">
+																		<span><%= (el && el._.newsTime != {}) ? moment(el.newsTime).locale('zh-cn').format("LL") : '' %></span>
+																</div>
+																<div class="main_title_blc">
+																		<h3><%= (el && el.shortTitle != {}) ? el.shortTitle : '' %></h3>
+																</div>
+																<div class="main_content" style="display: none">
+																		<p class="main_content_detail1"><%= (el && el.newsOrigin != {}) ? el.newsOrigin : '' %></p>
+																		<p class="main_content_detail2">
+																				<%= (el && el.content1 != {}) ? el.content1 : '' %>
+																		</p>
+																		<img src="/uploads/img/news/<%= el.contentImg.filename || '' %> " alt="">
+																		<p class="main_content_detail3">                                    
+																				<%= (el && el.content2 != {}) ? el.content2 : '' %>
+																		</p>
+																		<p class="news_linksBack"><%= (el && el.url != {}) ? el.url : '' %></p>
+																</div>
+														</div>
+														<div class="rightBlc">
+																<img src="/uploads/img/news/<%= el.displayImg.filename || '' %> " alt="">
+														</div>
+												</a>
+										</div>
+									<% }) %>
+								<% }%>
+
+
+                <!-- <div class="component_item_blc wow fadeInLeft">
+                    <a href="#" class="innerComponent bordEffe " id="new2">
+                        <div class="leftBlc">
+                            <div class="date_blc">
+                                <span>2018年4月02日</span>
+                            </div>
+                            <div class="main_title_blc">
+                                <h3>激光雷达、计算机视觉和雷达谁会赢？</h3>
+                            </div>
+                            <div class="main_content" style="display: none">
+                                <p class="main_content_detail1">丨本文转自：雷锋网 </p>
+                                <p class="main_content_detail2">
+                                    激光雷达、计算机视觉和雷达三种技术都能助力自动驾驶，但它们各自有自己的优劣，因而把它们组合起来是许多自动驾驶公司的做法，那么在各种各样的组合中，这三种技术最终谁会占优呢？本文由雷锋网(公众号：雷锋网)编译自博客 Brad Ideas。
+                                </p>
+                                <img src="/images/news/in_right_2.jpg" alt="">
+                                <p class="main_content_detail3">                                    
+                                    最近，一大批新创公司蠢蠢欲动，它们准备只靠计算机视觉和雷达就搞定自动驾驶。这些公司包括 AutoX 以及 Comma.ai。此外，像特斯拉这样的大公司也想甩掉激光雷达的包袱，轻装上阵搞定自动驾驶.
+                                    当然，特斯拉选择走这条路是因为 Elon Musk 打了小算盘：激光雷达现在价格较贵，产能也不够，但 Musk 却想直接让现售车辆未来通过软件升级实现全自动驾驶。
+                                    <br>对于这三项关键技术，如今的趋势已经非常明显...... 
+                                </p>
+                                <p class="news_linksBack">https://www.leiphone.com/news/201703/KXkrBJtPN19KctlN.html</p>
+                            </div>
+                        </div>
+                        <div class="rightBlc">
+                            <img src="/images/news/in_right_2.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="component_item_blc wow fadeInRight">
+                    <a href="#" class="innerComponent bordEffe " id="new2">
+                        <div class="leftBlc">
+                            <div class="date_blc">
+                                <span>2018年3月2日</span>
+                            </div>
+                            <div class="main_title_blc">
+                                <h3>华为牵引5G核心网创新发展</h3>
+                            </div>
+                            <div class="main_content" style="display: none">
+                                    <p class="main_content_detail1">丨本文转自：C114 </p>
+                                    <p class="main_content_detail2">
+                                        C114讯 3月2日专稿（蒋均牧）随着3GPP 5G第一阶段标准冻结，全球已经拉开5G预商用部署的帷幕；而5G所将带来的新商业、新业务和新应用，亦对包括核心网在内的现有网络提出了种种新的挑战。2018年世界移动大会（MWC 2018）上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展，将网络价值延伸到全行业。
+                                        在大会同期的GSMA全球移动大奖颁奖典礼上，华为5G核心网解决方案荣获了“最佳网络软件突破（Best Network Software Breakthrough）”奖，该奖项体现了业界对华为在5G核心网标准、技术、预商用进展及产业实践等方面领先能力与卓越表现的高度认可。
+                                    </p>
+                                    <img src="/images/news/huawei_1.png" alt="">
+                                    <p class="main_content_detail3">                                    
+                                        5G将开启全连接全业务时代
+                                        5G作为今年世界移动大会乃至整个业界最热门的话题之一，代表了人们对于未来的憧憬与向往——它将把历代移动通信以人为核心的连接延伸向万物互联，推动数字化社会的全面到来，并从根本上改变整个世界的运转方式。
+                                        在本届世界移动大会上，华为发布并全面展示了基于3GPP标准的端到端全系列5G产品解决方案，涵盖核心网到传输到站点到终端。华为5G核心网帮助运营商将网络价值延伸到全行业，使能面向全行业的新商业和新运营，给用户带来极致的新业务体验。
+                                        网络切片是实现5G使能全行业数字化愿景的支柱型技术，也是5G与4G断代的分水岭。基于以微服务为中心的架构（Microservice Centric Architecture），华为5G核心网使能切片新商业，运营商可先行部署核心网来开展eMBB、语音和WTTx等切片的商业运营，通过网络可编排来最大化网络资源效率、通过网络可定义来保证业务的端到端SLA。
+                                        基于以微服务为中心的架构，华为5G核心网亦促使运营模式从DevOps向A3Ops变革，A3即Automatic、Autonomous、AI-based，实现微服务的自由编排、微服务的生命周期管理和微服务的智能运维......
+                                    </p>
+                                    <p class="news_linksBack">http://www.c114.com.cn/news/126/a1044762.html</p>
+                            </div>
+                        </div>
+                        <div class="rightBlc">
+                            <img src="/images/news/huawei_1.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="component_item_blc wow fadeInLeft">
+                    <a href="#" class="innerComponent bordEffe " id="new1" data-toggle='modal'>
+                        <div class="leftBlc">
+                            <div class="date_blc"> 
+                                <span >2017-11-25 </span>
+                            </div>
+                            <div class="main_title_blc">
+                                <h3>自动驾驶汽车到底需要哪些类型的传感器？</h3>
+                            </div>
+                            <div class="main_content" style="display: none">
+                                <p class="main_content_detail1">丨本文转自：雷锋网 </p>
+                                <p class="main_content_detail2">
+                                    雷锋网按：想在 2021/2022 年推出达到 Level 4/5 级别（SAE）的全自动驾驶汽车，冗余传感器系统的大量应用必不可少。眼下，半自动驾驶系统已经用到了多种雷达和摄像头系统，真正起到决定性作用的高分辨率长探测距离（300 米）便宜的激光雷达还处在设计开发的初级阶段。在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少。
+                                    本文探讨了这三套系统的主要功能，它们各自的优势和劣势及技术的发展程度。此外，本文还从制造商的角度讨论了智能和成本优化解决方案中半导体零部件的地位.</p>
+                                <img src="/images/news/new1_detail_1.jpeg" alt="">
+                                <p class="main_content_detail3">                                    
+                                    一般来说，Level 0 意味着没有自动驾驶，司机要负责控制一切。
+                                    Level 1 则意味着车辆进阶到了辅助驾驶阶段，在行驶中辅助系统能为司机分担不少任务（如 ACC）。
+                                    Level 2 意味着车辆进入半自动化状态，不过司机需要全程监控系统。同时，至少一个车载系统（如巡航控制和车道保持）实现全自动化。
+                                    Level 3 代表有条件的自动驾驶。司机需要时刻监控系统并在关键时刻介入。当然，一些安全功能也会在某些情况下自动介入。
+                                    Level 4 就是高级别的自动驾驶了，不过它无法覆盖所有的驾驶情况（如恶劣气候），且受到车辆操作设计的限制。不过，司机无需继续监控路况了。
+                                    Level 5 是自动驾驶的终极状态，车辆能应对任何状况，司机们宣告彻底失业。
+                                    从现有情况来看，还没有制造商能拿出 Level 3 以上的自动驾驶量产车。不过，一些国家的立法机关则正在讨论为 Level 3 自动驾驶汽车开绿灯，用户最快将于 2020/2021 年在市场上买到此类车辆。
+                                    想要实现 Level 1-5 级别的自动驾驶，到底需要哪些传感器？这个问题我们已经作了回答：摄像头、激光雷达和雷达三套系统必不可少。
+                                    有些人会问，现在车上普遍用到的倒车雷达以后还有用吗？答案是否定的。不过，在 Level 1/2 上就用到的摄像头和雷达系统依然是更高级别自动驾驶的先决条件。
+                                    现在的摄像头系统普遍使用 CMOS 图像传感器，像素维持在 100-200 万左右。单色或者立体相机与雷达系统配合使用，就能实现车速、车距、障碍物或移动物体轮廓的精准探测。近程（24 GHz）和远程（77 GHz）雷达则安装在车辆前后以监控交通情况，它们的可视范围可覆盖车辆前后几厘米到几百米的范围。
+                                    在量产车中，激光雷达系统还很少见，由于产能低且价格昂贵，因此激光雷达技术的潜力还没得到充分挖掘......
+                                </p>
+                                <p class="news_linksBack">https://www.leiphone.com/news/201711/m5GxcZwauNU7utDA.html</p>
+                            </div>
+                        </div>
+                        <div class="rightBlc">
+                            <img src="/images/news/ind_right1.jpg" alt="">
+                        </div>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+ </section>
+
+<!-- Modal -->
+<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div> -->
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="dateBlc">
+                            <span id="new_date"></span>
+                        </div>
+                        <div class="mainContent_blc">
+                            <h2 id="new_title"></h2>
+                            <hr>
+                            <div class="img_blc text-center">
+                                <img id="new_image" alt="">
+                            </div>
+                            <p id="new_content">
+                                <p id="new_content_inner_1"></p>
+                                <p id="new_content_inner_2"></p>
+                                <p id="new_content_inner_3"></p>
+                                <a href="" id="new_content_link" target="_blank" >阅读原文</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+        </div>
+    </div>
+</div>
+    
+
+<% include ../layouts/sub/footer%>

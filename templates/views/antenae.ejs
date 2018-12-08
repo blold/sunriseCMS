@@ -96,7 +96,7 @@
               <div class="list-group">
 				<% if(antenaeOthers[0].otherFileName && antenaeOthers[0].otherFileName != {}){ %>
 					<% antenaeOthers.forEach(function(el){%>
-						<a href="../public/uploads/files/antenae/other/<%= el.otherFile.filename %>" class="list-group-item"><%= el.otherFileName %></a>
+						<a href="../public/uploads/files/antenae/other/<%= el.otherFile.filename %>" class="list-group-item hover_blue"><%= el.otherFileName %></a>
 					<% }) %>
 				<%}%>
               </div>
