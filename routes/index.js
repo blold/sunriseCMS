@@ -34,13 +34,18 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-
 	app.get('/', routes.views.home);
 	app.get('/solutions', routes.views.solutionIndex);
 	app.get('/team', routes.views.team);
 	app.get('/about', routes.views.about);
 	app.get('/news', routes.views.news);
 	app.get('/cases', routes.views.cases);
+	app.get('/job', routes.views.job);
+	app.post('/enquiry', routes.views.enquiry);
+	// app.post('/enquiry', function(req, res){
+	// 	console.log(req.body)
+	// 	res.send(200)
+	// });
 	app.get('/solutions/antenae', routes.views.antenae);
 	app.get('/solutions/geologic', routes.views.geologic);
 
@@ -53,7 +58,11 @@ exports = module.exports = function (app) {
 	});
 
 	// Geologic Download
-	app.get('/public/uploads/files/geologic/series/:id', function (req, res, next) {
+	app.get('/public/uploads/files/geologic/series/:id', function (
+		req,
+		res,
+		next
+	) {
 		res.download(`public/uploads/files/geologic/series/${req.params.id}`);
 	});
 	app.get('/public/uploads/files/geologic/other/:id', function (req, res, next) {
@@ -62,5 +71,4 @@ exports = module.exports = function (app) {
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
 };

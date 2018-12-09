@@ -276,62 +276,6 @@
 					</div>
 					<%})%>
 				<%}%>
-        <!-- <div class="col-md-3">
-          <div class="member wow flipInX">
-            <div class="pic"><img src="/images/team/boss_1.jpg" alt=""></div>
-            <h4>王学军</h4>
-            <span>总经理</span>
-            <div class="social">
-              <a href=""><i class="fa fa-qq"></i></a>
-              <a href=""><i class="fa fa-wechat"></i></a>
-              <a href=""><i class="fa fa-weibo"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member wow flipInX">
-            <div class="pic"><img src="/images/team/team_member_1_bw.png" alt=""></div>
-            <h4>刘沛秋</h4>
-            <span>研发中心总监，高级射频工程师</span>
-            <div class="social">
-              <a href=""><i class="fa fa-qq"></i></a>
-              <a href=""><i class="fa fa-wechat"></i></a>
-              <a href=""><i class="fa fa-weibo"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member wow flipInX">
-            <div class="pic"><img src="/images/team/team_member_2_bw.png" alt=""></div>
-            <h4>左建宏</h4>
-            <span>研发中心技术总监，高级射频工程师</span>
-            <div class="social">
-             <a href=""><i class="fa fa-qq"></i></a>
-              <a href=""><i class="fa fa-wechat"></i></a>
-              <a href=""><i class="fa fa-weibo"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member wow flipInX">
-            <div class="pic"><img src="/images/team/team_member_3_bw.png" alt=""></div>
-            <h4>全小红</h4>
-            <span>嵌入式软件工程师</span>
-            <div class="social">
-             <a href=""><i class="fa fa-qq"></i></a>
-              <a href=""><i class="fa fa-wechat"></i></a>
-              <a href=""><i class="fa fa-weibo"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div> -->
-
       </div>
     </div>
   </section>
@@ -383,19 +327,20 @@
             <div id="errormessage"></div>
             <form action="" method="post" role="form" class="contactForm">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="姓名" data-rule="minlen:4" data-msg="请输入你的名字" />
+                <label for="name" class="bmd-label-floating">姓名</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="姓名" data-rule="minlen:2" data-msg="请输入你的名字" value="andy" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="邮箱" data-rule="email" data-msg="请输入有效邮箱地址" />
+                <input type="email" class="form-control" name="email" id="email" placeholder="邮箱" data-rule="email" data-msg="请输入有效邮箱地址" value="123@123.com" />
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="主题" data-rule="minlen:4" data-msg="请输入至少四个字" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="主题" data-rule="minlen:2" data-msg="请输入至少四个字" value="1233"/>
                 <div class="validation"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="请输入内容信息" placeholder="信息"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="请输入内容信息" placeholder="信息" value="是分身乏术"></textarea>
                 <div class="validation"></div>
               </div>
               <div class="text-center"><button style="width: 100%" type="submit">发送</button></div>

@@ -3,6 +3,7 @@ var Home = keystone.list('home');
 var Team = keystone.list('team');
 var MainHeader = keystone.list('mainHeader');
 var MainFooter = keystone.list('mainFooter');
+var Enquiry = keystone.list('enquiry');
 
 exports = module.exports = function (req, res) {
 
@@ -34,16 +35,35 @@ exports = module.exports = function (req, res) {
 				locals.teams = results;
 				next();
 			});
-			// console.log(teamArray);
-			// next();
 		});
 	});
-	view.on('init', function (next) {
-		Home.model.findOne({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
-			console.log(results);
-		});
-		next();
-	});
+	// view.on('init', function (next) {
+	// 	Home.model.findOne({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+	// 		console.log(results);
+	// 	});
+	// 	next();
+	// });
+
+	// locals.enquiryTypes = Enquiry.fields.enquiryType.ops;
+	// locals.formData = req.body || {};
+	// locals.validationErrors = {};
+	// locals.enquirySubmitted = false;
+	// view.on('post', function (next) {
+	// 	console.log(locals.formData);
+		// var application = new Enquiry.model();
+		// var updater = application.getUpdateHandler(req);
+		// updater.process(req.body, {
+		// 	flashErrors: true,
+		// }, function (err) {
+		// 	if (err) {
+		// 		locals.validationErrors = err.errors;
+		// 	} else {
+		// 		locals.enquirySubmitted = true;
+		// 	}
+		// 	next();
+		// });
+	// 	next();
+	// });
 
 	view.render('home');
 };

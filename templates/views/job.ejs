@@ -1,0 +1,194 @@
+<% include ../layouts/sub/header %>
+<link href="/styles/site/job.css" rel="stylesheet" />
+
+<div class="banner container">
+	<div class="row">
+		<div class="col-md-12">
+			<a href=".">主页</a> <i class="fa fa-angle-right"></i> <span>招聘</span>
+		</div>
+	</div>
+</div>
+
+<section class="job_blc">
+	<div class="top_blc text-center">
+		<h3>
+			<span class="tlt"
+				><%= (jobPage && jobPage.bigRotateTitle1) ? jobPage.bigRotateTitle1 :
+				'有想法' %>|<%= (jobPage && jobPage.bigRotateTitle2) ?
+				jobPage.bigRotateTitle2 : '有热情' %>|<%= (jobPage &&
+				jobPage.bigRotateTitle3) ? jobPage.bigRotateTitle3 : '有能力' %></span
+			>
+			<%= (jobPage && jobPage.bigStaticTitle) ? jobPage.bigStaticTitle :
+			'的你，我们在等着' %>
+		</h3>
+	</div>
+
+	<div class="main_blc">
+		<div class="container">
+			<h4 class="text-center">
+				<%= (jobPage && jobPage.mainTitle != {}) ? jobPage.mainTitle :
+				'你想做什么？' %>
+			</h4>
+
+			<% console.log(jobPage)%>
+			<div class="row">
+				<div class="col-md-4 col-sm-12 job_card">
+					<div class="bordEffe wow bounceInUp job_blc">
+						<div class="card_top_blc">
+							<% if (jobPage.techJobImage) { %>
+								<img src="/uploads/img/job/<%= jobPage.techJobImage.filename || '../../../images/jobs/tech.jpg' %> " alt="" />
+							<% }else{%>
+								<img src="/images/jobs/tech.jpg' %> " alt="" />
+							<% }%>
+						</div>
+						<div class="main_content_blc">
+							<h4 id="job_title1">
+								<%= (jobPage && jobPage.techJobTitle != '') ? jobPage.techJobTitle : '技术与科技' %>
+							</h4>
+							<p>
+								<%= (jobPage && jobPage.techJobDesc != '') ? jobPage.techJobDesc : 'Develop the products and tools of the future for billions of users.' %>
+							</p>
+						</div>
+						<div class="footer_blc">
+							<a
+								class="effect-underline job_check"
+								href="#"
+								onclick="drawTable(1)"
+								id="tech_check"
+								>查看</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12 job_card">
+					<div class="bordEffe wow bounceInUp">
+						<div class="bordEffe job_blc">
+							<div class="card_top_blc">
+								<% if (jobPage.busiJobImage) { %>
+									<img src="/uploads/img/job/<%= jobPage.busiJobImage.filename || '../../../images/jobs/bus.jpeg' %> " alt="" />
+								<% }else{%>
+									<img src="/images/jobs/bus.jpeg' %> " alt="" />
+								<% }%>
+							</div>
+							<div class="main_content_blc">
+								<h4 id="job_title2">
+										<%= (jobPage && jobPage.busiJobTitle != '') ? jobPage.busiJobTitle : '管理及商务' %>
+									</h4>
+									<p>
+										<%= (jobPage && jobPage.busiJobDesc != '') ? jobPage.busiJobDesc : 'Develop the products and tools of the future for billions of users.' %>
+									</p>
+							</div>
+							<div class="footer_blc">
+								<a
+									class="effect-underline job_check"
+									href="#"
+									onclick="drawTable(2)"
+									id="bis_check"
+									>查看</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12 job_card">
+						<div class="bordEffe wow bounceInUp">
+							<div class="bordEffe job_blc">
+								<div class="card_top_blc">
+									<% if (jobPage.otherJobImage) { %>
+										<img src="/uploads/img/job/<%= jobPage.otherJobImage.filename || '../../../images/jobs/other.jpg' %> " alt="" />
+									<% }else{%>
+										<img src="/images/jobs/other.jpg' %> " alt="" />
+									<% }%>
+								</div>
+								<div class="main_content_blc">
+										<h4 id="job_title2">
+											<%= (jobPage && jobPage.otherJobTitle != '') ? jobPage.otherJobTitle : '管理及商务' %>
+										</h4>
+										<p>
+											<%= (jobPage && jobPage.otherJobTitle != '') ? jobPage.otherJobTitle : 'Develop the products and tools of the future for billions of users.' %>
+										</p>
+								</div>
+								<div class="footer_blc">
+									<a
+										class="effect-underline job_check"
+										href="#"
+										onclick="drawTable(2)"
+										id="bis_check"
+										>查看</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>	
+
+				<div class="detail_blc col-12" id="tabl_job_blc">
+					<h4 id="table_job_cate"></h4>
+					<table id="job_table">
+						<thead>
+							<th class="t_title">职位</th>
+							<th class="t_title">要求</th>
+							<th class="t_title">职责</th>
+							<th class="t_title">地点</th>
+							<th class="t_title">薪资</th>
+						</thead>
+
+						<div class="hoverBorderEffect">
+							<% if(jobs && jobs.length > 0){ %> <% jobs.forEach(function(el){%>
+							<% if(el.jobCategory == '技术与科技'){%>
+							<tbody id="t_tbody">
+								<tr>
+									<td><%= el.title %></td>
+									<td><%- el.req%></td>
+									<td><%- el.duti%></td>
+									<td><%= el.site%></td>
+									<td><%= el.sal%></td>
+								</tr>
+							</tbody>
+							<%}%> <% if(el.jobCategory == '管理及商务'){%>
+							<tbody id="m_tbody">
+								<tr>
+									<td><%= el.title %></td>
+									<td><%- el.req%></td>
+									<td><%- el.duti%></td>
+									<td><%= el.site%></td>
+									<td><%= el.sal%></td>
+								</tr>
+							</tbody>
+							<%}%> <% if(el.jobCategory == '其他'){%>
+							<tbody id="o_tbody">
+								<tr>
+									<td><%= el.title %></td>
+									<td><%- el.req%></td>
+									<td><%- el.duti%></td>
+									<td><%= el.site%></td>
+									<td><%= el.sal%></td>
+								</tr>
+							</tbody>
+							<%}%><%}) %> <% }%>
+						</div>
+					</table>
+				</div>
+
+				<div class="contact_job_blc col-12">
+					<h4 class="contact_job_title">联系方式</h4>
+					<div class="contact_body_blc">
+						<div class="detail_contact_blc">
+							<label>联系人</label>
+							<p>赵小姐</p>
+						</div>
+						<div class="detail_contact_blc">
+							<label>联系电话</label>
+							<p>22203555-3547</p>
+						</div>
+						<div class="detail_contact_blc">
+							<label>联系邮箱</label>
+							<p>recruit@sangrui.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<% include ../layouts/sub/footer%>

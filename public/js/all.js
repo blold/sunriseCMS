@@ -100,11 +100,12 @@ jQuery(document).ready(function ($) {
         // console.log('str: ' + str);		
         $.ajax({
             type: "POST",
-            url: window.location.origin + "/contact",
+            url: window.location.origin + "/enquiry",
             data: str,
             success: function success(msg) {
-                //    alert(msg);
-                // console.log(msg);
+				//    alert(msg);
+				console.log("-------ajax---------")
+                console.log(msg);
                 if (msg == 'OK') {
                     // console.log('200')
                     $("#sendmessage").addClass("show");
@@ -116,7 +117,11 @@ jQuery(document).ready(function ($) {
                     $("#errormessage").addClass("show");
                     $('#errormessage').html(msg + ', 邮件发送不成功，请自行发送邮件！');
                 }
-            }
+			},
+			error: function (err){
+				console.log("------ajax error-------")
+				console.log(err);
+			}
         });
         return false;
     });
