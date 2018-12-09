@@ -1,0 +1,284 @@
+<% include ../layouts/sub/header %>
+<link href="/styles/site/cases.css" rel="stylesheet">
+
+
+<div class="banner container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href=".">主页</a>
+            <i class="fa fa-angle-right"></i>
+            <span>方案展示</span>
+        </div>
+    </div>
+</div>    
+
+<section class="cases_blc">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+			<% if(cases.img1.filename){ %>
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<% } %>
+			<% if (cases.img2.filename){ %>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<% } %>
+			<% if (cases.img3.filename){ %>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<% } %>
+			<% if (cases.img4.filename){ %>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			<% } %>
+			<% if (cases.img5.filename){ %>
+				<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+			<% } %>
+
+        </ol>
+        <div class="carousel-inner">
+			<% if(cases.img1.filename){ %>
+				<div class="carousel-item active">
+					<div class="car_banner_title1">
+						<!-- <h1>ROADS TO BETTER FUTURE</h1>
+						<button type="button" class="btn btn-raised btn-primary">了解更多</button>    -->
+					</div>
+					<img class="d-block carous_blc" src="/uploads/img/cases/<%= cases.img1.filename %>" alt="First slide">
+				</div>
+			<%} %>
+			<% if(cases.img2.filename){ %>
+				<div class="carousel-item">
+					<div class="car_banner_title1">
+						<!-- <h1>ROADS TO BETTER FUTURE</h1>
+						<button type="button" class="btn btn-raised btn-primary">了解更多</button>    -->
+					</div>
+					<img class="d-block carous_blc" src="/uploads/img/cases/<%= cases.img2.filename %>" alt="Second slide">
+				</div>
+			<%} %>
+			<% if(cases.img3.filename){ %>
+				<div class="carousel-item active">
+					<div class="car_banner_title1">
+						<!-- <h1>ROADS TO BETTER FUTURE</h1>
+						<button type="button" class="btn btn-raised btn-primary">了解更多</button>    -->
+					</div>
+					<img class="d-block carous_blc" src="/uploads/img/cases/<%= cases.img3.filename %>" alt="Third slide">
+				</div>
+			<%} %>
+			<% if(cases.img4.filename){ %>
+				<div class="carousel-item active">
+					<div class="car_banner_title1">
+						<!-- <h1>ROADS TO BETTER FUTURE</h1>
+						<button type="button" class="btn btn-raised btn-primary">了解更多</button>    -->
+					</div>
+					<img class="d-block carous_blc" src="/uploads/img/cases/<%= cases.img4.filename %>" alt="Forth slide">
+				</div>
+			<%} %>
+			<% if(cases.img5.filename){ %>
+				<div class="carousel-item active">
+					<div class="car_banner_title1">
+						<!-- <h1>ROADS TO BETTER FUTURE</h1>
+						<button type="button" class="btn btn-raised btn-primary">了解更多</button>    -->
+					</div>
+					<img class="d-block carous_blc" src="/uploads/img/cases/<%= cases.img5.filename %>" alt="Fifth slide">
+				</div>
+			<%} %>
+
+        </div>
+        <a class="carousel-control-prev" data-target="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" data-target="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container mainBlc">
+        <div class="row">
+			<% if(casesSeries && casesSeries.length > 0){ %>
+				<% casesSeries.forEach(function(el) {%>
+					<div class="col-md-4 col-sm-6 col-xs-12 cases_out_blc wow zoomIn">
+						<div class="case_blc bordEffe  hover_div">
+							<a href="#" class="case_click">
+								<div class="top_img_blc">
+									<div class="topImg_click_blc">
+										<img src="/uploads/img/cases/series/<%= el.casesImg.filename %>" alt="">
+									</div>
+								</div>
+								<div class="case_content">
+									<div class="content_title_blc">
+										<h4 class="case_title"><%= el.casesTitle%></h4>
+										<span><%= el.casesSubTitle %></span>
+									</div>
+									<div class="cases_desc">
+										<div><%= el.casesBref %></div>
+										<div class="more_detail" style="display: none">
+											<span style="font-weight: bold">方案</span>：<%= el.casesMoreContent %>
+										</div>      
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				<%})%>
+			<%} %>
+
+            <!-- <div class="col-md-4 col-sm-6 col-xs-12 cases_out_blc wow zoomIn">
+                <div class="case_blc bordEffe  hover_div">
+                    <a href="#" class="case_click">
+                        <div class="top_img_blc">
+                            <div class="topImg_click_blc">
+                                <img src="/images/cases/cases_tele_1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="case_content">
+                            <div class="content_title_blc">
+                                <h4 class="case_title">通信</h4>
+                                <span>丽水篮球馆—大型场馆覆盖解决方案</span>
+                            </div>
+                            <div class="cases_desc">
+                                <div>
+                                    <ol>
+                                        <li>超高密度，覆盖难控制</li>
+                                        <li>超大容量，干扰无可避免</li>
+                                        <li>常规天线不满足覆盖要求</li>
+                                    </ol>
+                                </div>
+                                <div class="more_detail" style="display: none">
+                                    <span style="font-weight: bold">方案</span>：根据不同的看台结构和天线安装角度，使用两款矩形赋形天线覆盖相应的看台区域。
+                                </div>      
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 wow zoomIn cases_out_blc">
+                <div class="case_blc bordEffe hover_div">
+                    <a href="#" class="case_click">
+                        <div class="top_img_blc">
+                            <div class="topImg_click_blc">
+                                <img src="/images/cases/cases_geo_1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="case_content">
+                            <div class="content_title_blc">
+                                <h4 class="case_title">地质环境</h4>
+                                <span>开化县齐溪镇大龙村边坡监测项目</span>
+                            </div>
+                            <div class="cases_desc">
+                                <div>为了能直观掌握边坡体整体情况、边坡体明显裂缝情况、边坡体下游居民等有可能受灾对象的实时情况、远程巡视等。</div><br>
+                                <div class="more_detail" style="display: none">
+                                   <span style="font-weight: bold">方案</span> ：应用系统可以在监控平台、客户终（PC机或手机APP）端进行数据接收、处理、存贮、分析、预警等功能。系统结构采用分布式体系结构，数据采集工作分散到靠近较多传感器的测控单元来完成，然后将所测数据传送到信息中心，信息中心处理数据格式后实时传输到指定的客户终端。系统每个观测现场的测控单元都是多功能智能型仪器，能对各种类型的传感器进行控制测量。应用系统可以在监控平台、客户终（PC机或手机APP）端进行数据接收、处理、存贮、分析、预警等功能
+                                </div>      
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 wow zoomIn cases_out_blc">
+                <div class="case_blc bordEffe hover_div">
+                    <a href="#" class="case_click">
+                        <div class="top_img_blc">
+                            <div class="topImg_click_blc">
+                                <img src="/images/cases/cases_water_1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="case_content">
+                            <div class="content_title_blc">
+                                <h4 class="case_title">水利水电</h4>
+                            </div>
+                            <div class="cases_desc">
+                                <div>高频雷达传感器结构合理，性能良好，计量准确，稳定性好，实现了对水利水位，地面沉降等的全天候计量和监督。</div><br>
+                                <div class="more_detail" style="display: none">
+                                    <span style="font-weight: bold"></span> 
+                                </div>      
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 wow zoomIn cases_out_blc">
+                <div class="case_blc bordEffe hover_div">
+                    <a href="#" class="case_click">
+                        <div class="top_img_blc">
+                            <div class="topImg_click_blc">
+                                <img src="/images/cases/cases_traffic_1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="case_content">
+                            <div class="content_title_blc">
+                                <h4 class="case_title">智能交通</h4>
+                            </div>
+                            <div class="cases_desc">
+                                <div > <span style="font-weight: bold">现状</span>: 雷达传感器在智能交通领域运用比较广泛的是雷达测速仪，卡口测速抓拍雷达等。随着智慧城市的兴起，车流量雷达、2D/3D多目标跟踪雷达也逐渐普及起来。</div><br>
+                                <div class="more_detail" style="display: none">
+                                    <span style="font-weight: bold">方案</span>：采用多目标雷达传感器与图像传感器的技术，可以用一个雷达传感器监测3~5个车道，大大降低了系统成本，同时安装方式更加灵活，用户可以选择路侧安装或者龙门架安装。
+                                </div>      
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 wow zoomIn cases_out_blc">
+                <div class="case_blc bordEffe hover_div">
+                    <a href="#" class="case_click">
+                        <div class="top_img_blc">
+                            <div class="topImg_click_blc">
+                                <img src="/images/cases/cases_chem_1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="case_content">
+                            <div class="content_title_blc">
+                                <h4 class="case_title">石油化工</h4>
+                            </div>
+                            <div class="cases_desc">
+                                <div> <span style="font-weight: bold"></span>雷达物位计发射功率很低的极短的微波通过天线系统发射并接收。</div><br>
+                                <div class="more_detail" style="display: none">
+                                    <span style="font-weight: bold">方案</span>：雷达波以光速运行。运行时间可以通过电子部件被转换成物位信号。一种特殊的时间延伸方法可以确保极短时间内稳定和精确的测量。即使存在虚假反射的时候，最新的微处理技术和软件也可以准确地分析出物位回波。通过输入容器尺寸，可以将上空距离值转换成与物位成正比的信号。仪表可以空仓调试。在固体测量中的应用可以使用K-频段的高频传感器。由于信号的聚焦效果非常好，料仓内的安装物或仓壁的粘附物都不会影响测量。
+                                </div>      
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="caseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div> -->
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- <div class="dateBlc">
+                            <span id="case_date"></span>
+                        </div> -->
+                        <div class="mainContent_blc">
+                            <h2 id="case_title"></h2>
+                            <hr>
+                            <div class="img_blc text-center">
+                                <img id="case_image" data-lity>
+                            </div>
+                            <p id="case_content">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../layouts/sub/footer%>

@@ -40,6 +40,7 @@ exports = module.exports = function (app) {
 	app.get('/team', routes.views.team);
 	app.get('/about', routes.views.about);
 	app.get('/news', routes.views.news);
+	app.get('/cases', routes.views.cases);
 	app.get('/solutions/antenae', routes.views.antenae);
 	app.get('/solutions/geologic', routes.views.geologic);
 

@@ -95,6 +95,18 @@ keystone.set('nav', {
 			path: '/keystone/geologic_others',
 		},
 	],
+	Cases: [
+		{
+			label: 'Cases',
+			key: 'cases',
+			path: '/keystone/cases',
+		},
+		{
+			label: 'CasesSeries',
+			key: 'cases_series',
+			path: '/keystone/cases_series',
+		},
+	],
 });
 
 // Start Keystone to connect to your database and initialise the web server
