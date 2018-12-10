@@ -15,21 +15,23 @@
 <section class="team_blc" id="team_section">
     <div class="container">
         <div class="row">
-			<% if(team && team.name){%>
-			<div class="col-md-4">
-				<div class="team_blc">
-					<div class="team_img_blc">
-						<a ><img src="/uploads/img/team/<%= team.img.filename || '../../images/team/team_noImg.png'%>" alt=""></a>
-					</div>
-					<div class="team_main">
-						<h4 class="team_name"><%= team.name %></h4>
-						<div class="team_status"><%= team.title %></div>
-						<div class="team_desc">
-								<%= team.desc %>
+			<% if(team && team.length > 0){%>
+				<% team.forEach(function(el){ %>
+					<div class="col-md-4">
+						<div class="team_blc">
+							<div class="team_img_blc">
+								<a ><img src="/uploads/img/team/<%= el.img.filename || '../../images/team/team_noImg.png'%>" alt=""></a>
+							</div>
+							<div class="team_main">
+								<h4 class="team_name"><%= el.name %></h4>
+								<div class="team_status"><%= el.title %></div>
+								<div class="team_desc">
+									<%= el.desc %>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div> 
+					</div> 
+				<% }) %>
 			<%}%>
         </div>
     </div>
