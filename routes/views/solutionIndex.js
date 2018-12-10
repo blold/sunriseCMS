@@ -19,8 +19,7 @@ exports = module.exports = function (req, res) {
 	// 	});
 	// 	next();
 	// });
+
 	// Render the view
-	// view.render('index');
-	// view.render('mainHeader');
 	view.render('solutionIndex');
 };

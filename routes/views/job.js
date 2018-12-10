@@ -1,6 +1,6 @@
 var keystone = require('keystone');
 var Job = keystone.list('job');
-var JobPage = keystone.list('job_page');
+var JobPage = keystone.list('jobPage');
 
 exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
@@ -15,7 +15,6 @@ exports = module.exports = function (req, res) {
 			.sort({ createdAt: 'desc' })
 			.exec(function (err, results) {
 				locals.jobs = results;
-				// console.log(locals.header);
 				next();
 			});
 	});
@@ -24,8 +23,8 @@ exports = module.exports = function (req, res) {
 			.findOne({})
 			.sort({ createdAt: 'desc' })
 			.exec(function (err, results) {
-				locals.jobPage = results;
-				// console.log(locals.header);
+				if (!err && results) locals.jobPage = results;
+				else locals.jobPage = {};
 				next();
 			});
 	});

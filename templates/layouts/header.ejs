@@ -103,32 +103,25 @@
 					<div class="hero-logo">
 						<!-- <img class="" src="/images/logo.png" alt="Imperial"> -->
 						<!-- <h1>SUNRISE</h1> -->
-						<h1>
-							<%= (header && header.title != {}) ? header.title : 'SUNRISE' %>
-						</h1>
+						<h1><%= (header && header.title ) ? header.title : 'SUNRISE' %></h1>
 					</div>
 
 					<!-- <h1>Welcome to 桑瑞</h1> -->
 					<h1>
-						<%= (header && header.first_desc != {}) ? header.first_desc :
-						'Welcome to 桑瑞' %>
+						<%= (header && header.first_desc ) ? header.first_desc : 'Welcome to 桑瑞' %>
 					</h1>
 					<h2>
 						我们致力于
 						<span class="rotating"
-							><%= (header && header.first_catetory != {}) ?
-							header.first_catetory : '智慧城市发展, 微波雷达传感技术,
-							高精度数据采集和应用解决方案' %></span
+							><%= (header && header.first_catetory ) ? header.first_catetory : '智慧城市发展, 微波雷达传感技术, 高精度数据采集和应用解决方案' %></span
 						>
 					</h2>
 					<div class="actions">
 						<a href="#" class="btn-get-started" id="beginJourne"
-							><%= (header && header.btn_beginJourne != {}) ?
-							header.btn_beginJourne : '开始旅程' %></a
+							><%= (header && header.btn_beginJourne ) ? header.btn_beginJourne : '开始旅程' %></a
 						>
 						<a href="#" class="btn-services" id="beginProduct"
-							><%= (header && header.beginProduct != {}) ? header.beginProduct :
-							'产品业务' %></a
+							><%= (header && header.beginProduct ) ? header.beginProduct : '产品业务' %></a
 						>
 					</div>
 				</div>
@@ -150,8 +143,7 @@
 					<!-- <h1><a class="header_logo" href=".">SUNRISE</a></h1> -->
 					<h1>
 						<a class="header_logo" href="."
-							><%= (header && header.mainHeaderTitle != {}) ?
-							header.mainHeaderTitle : 'SUNRISE' %></a
+							><%= (header && header.mainHeaderTitle ) ? header.mainHeaderTitle : 'SUNRISE' %></a
 						>
 					</h1>
 				</div>
@@ -160,70 +152,59 @@
 					<ul class="nav-menu">
 						<li>
 							<a href="/about"
-								><%= (header && header.mainHeaderAbout != {}) ?
-								header.mainHeaderAbout : '关于' %></a
+								><%= (header && header.mainHeaderAbout ) ? header.mainHeaderAbout : '关于' %></a
 							>
 						</li>
 						<li class="menu-has-children">
 							<a href="/solutions"
-								><%= (header && header.mainHeaderSolutionIndex != {}) ?
-								header.mainHeaderSolutionIndex : '解决方案' %></a
+								><%= (header && header.mainHeaderSolutionIndex ) ? header.mainHeaderSolutionIndex : '解决方案' %></a
 							>
 							<ul>
 								<li>
 									<a href="/solutions/antenae"
-										><%= (header && header.mainHeaderSolutionAntena != {}) ?
-										header.mainHeaderSolutionAntena : '通信' %></a
+										><%= (header && header.mainHeaderSolutionAntena ) ? header.mainHeaderSolutionAntena : '通信' %></a
 									>
 								</li>
 								<li>
 									<a href="/solutions/geologic"
-										><%= (header && header.mainHeaderSolutionGeotech != {}) ?
-										header.mainHeaderSolutionGeotech : '地质环境' %></a
+										><%= (header && header.mainHeaderSolutionGeotech ) ? header.mainHeaderSolutionGeotech : '地质环境' %></a
 									>
 								</li>
 								<li>
 									<a class="devMode" href="javascript:void(0)"
-										><%= (header && header.mainHeaderSolutionElect != {}) ?
-										header.mainHeaderSolutionElect : '水利电力' %></a
+										><%= (header && header.mainHeaderSolutionElect ) ? header.mainHeaderSolutionElect : '水利电力' %></a
 									>
 								</li>
 								<li>
 									<a class="devMode" href="javascript:void(0)"
-										><%= (header && header.mainHeaderSolutionTraffic != {}) ?
-										header.mainHeaderSolutionTraffic : '智能交通' %></a
+										><%= (header && header.mainHeaderSolutionTraffic ) ? header.mainHeaderSolutionTraffic : '智能交通' %></a
 									>
 								</li>
 								<li>
 									<a class="devMode" href="javascript:void(0)"
-										><%= (header && header.mainHeaderSolutionChemist != {}) ?
-										header.mainHeaderSolutionChemist : '石油化工' %></a
+										><%= (header && header.mainHeaderSolutionChemist ) ? header.mainHeaderSolutionChemist : '石油化工' %></a
 									>
 								</li>
 							</ul>
 						</li>
 						<li>
 							<a href="/news"
-								><%= (header && header.mainHeaderNews != {}) ?
-								header.mainHeaderNews : '新闻资讯' %></a
+								><%= (header && header.mainHeaderNews ) ? header.mainHeaderNews : '新闻资讯' %></a
 							>
 						</li>
 						<li>
 							<a href="/cases"
-								><%= (header && header.mainHeaderCases != {}) ?
-								header.mainHeaderCases : '方案展示' %></a
+								><%= (header && header.mainHeaderCases ) ? header.mainHeaderCases : '方案展示' %></a
 							>
 						</li>
 						<li>
 							<a href="/team"
-								><%= (header && header.mainHeaderTeam != {}) ?
-								header.mainHeaderTeam : '团队' %></a
+								><%= (header && header.mainHeaderTeam ) ? header.mainHeaderTeam : '团队' %></a
 							>
 						</li>
 						<li>
 							<a href="/job"
-								><%= (header && header.mainHeaderRecruit != {}) ?
-								header.mainHeaderRecruit : '招聘' %></a
+								><%= (header && header.mainHeaderRecruit ) ? header.mainHeaderRecruit : '招聘' %></a
 							>
 						</li>
 						<li><a href="#contact">联系我们</a></li>

@@ -18,84 +18,40 @@
         <div class="row row-offcanvas row-offcanvas-right">
             <div class="col-12 col-md-9">
                 <div class="jumbotron">
-                    <h1><%= (geologic && geologic.geologicTitle != {}) ? geologic.geologicTitle : '地质环境' %></h1>
+                    <h1><%= (geologic && geologic.geologicTitle ) ? geologic.geologicTitle : '地质环境' %></h1>
                     <p>
-												<%= (geologic && geologic.geologicDesc != {}) ? geologic.geologicDesc : '' %>
+												<%= (geologic && geologic.geologicDesc ) ? geologic.geologicDesc : '' %>
                     </p>
                 </div>
                 <div class="radar_blc">
                     <div class="row">
                         <div class="col-12">
-                            <h3><%= (geologic && geologic.mainTitle != {}) ? geologic.mainTitle : '雷达' %></h3>
-												</div>
-												<% if(geologicSeries && geologicSeries[0].solutionTitle != {}){ %>
-													<% geologicSeries.forEach(function(el){ %>
-														<div class="col-md-4 col-xs-12">
-															<div class="card wow flipInX">
-																<img class="card-img-top" src="/uploads/img/geologic/series/<%= el.solutionImg.filename %>" alt="Card image cap">
-																<div class="card-body">
-																	<h4 class="card-title"><%= el.solutionTitle || '系列名称' %></h4>
-																	<p class="card-text content_p">
-																		<%= el.solutionDesc || '系列描述' %>
-																	</p>
-																</div>
-																<div class="download_blc">
-																	<a href="../public/uploads/files/geologic/series/<%= el.solutionFile.filename %>" target="_blank">下载文档</a>
-																</div>
-															</div>
-														</div> 
-													<% }) %>
-												<% } %>
-
-                        <!-- <div class="col-md-4 col-xs-12">
-                            <div class="card wow flipInX">
-                                <img class="card-img-top" src="/images/solutions/radar_3_1.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">地质与环境综合监测系统</h4>
-                                    <p class="card-text content_p">
-                                        通过一定的监测仪器火监测手段对已知的地质灾害体进行测量, 数据分析, 了解灾害的变形,位移状态及趋势,为地质灾害防治决策以及预报预警提供定量的数据。
-                                    </p>
-
-                                </div>
-                                <div class="download_blc">
-                                    <a href="../files/地质与环境综合监测系统.pdf" target="_blank">下载文档</a>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="col-md-4 col-xs-12">
-                            <div class="card wow flipInX">
-                                <img class="card-img-top" src="/images/solutions/radar_3_2.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">滑坡、泥石流监测系统</h4>
-                                    <p class="card-text content_p">
-                                        地质灾害监测是地质灾害防治的重要手段,其目的是通过一定的监测仪器火监测手段对已知的地质灾害体进行测量,分析,了解地质灾害的变形,位移状态及趋势,为地质灾害防治决策以及预报预警提供定量的数据。
-                                    </p>
-                                </div>
-                                <div class="download_blc">
-                                    <a href="../files/滑坡-泥石流监测方案.pdf" target="_blank">下载文档</a>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="col-md-4 col-xs-12">
-                            <div class="card wow flipInX">
-                                <img class="card-img-top" src="/images/solutions/radar_3_3.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">高频雷达测距仪</h4>
-                                    <p class="card-text content_p">
-                                        高频雷达测距仪可应用在山体滑坡、化工、冶金、水泥厂、煤矿、食品、制药、桥梁变形监测、建筑变形监测等所有行业测量仪器。据市场调查数据显示;雷达测距仪是目前各类测量仪表中适用范围最广、测量最精确。
-                                    </p>
-                                </div>
-                                <div class="download_blc">
-                                    <a href="../files/雷达测距仪.pdf" target="_blank">下载文档</a>
-                                </div>
-                            </div>
-                        </div>           -->
+                            <h3><%= (geologic && geologic.mainTitle ) ? geologic.mainTitle : '雷达' %></h3>
+						</div>
+						<% if(geologicSeries && geologicSeries.length > 0 ){ %>
+							<% geologicSeries.forEach(function(el){ %>
+								<div class="col-md-4 col-xs-12">
+									<div class="card wow flipInX">
+										<img class="card-img-top" src="/uploads/img/geologic/series/<%= el.solutionImg.filename %>" alt="Card image cap">
+										<div class="card-body">
+											<h4 class="card-title"><%= el.solutionTitle || '系列名称' %></h4>
+											<p class="card-text content_p">
+												<%= el.solutionDesc || '系列描述' %>
+											</p>
+										</div>
+										<div class="download_blc">
+											<a href="../public/uploads/files/geologic/series/<%= el.solutionFile.filename %>" target="_blank">下载文档</a>
+										</div>
+									</div>
+								</div> 
+							<% }) %>
+						<% } %>
                     </div>                     
                 </div>
             </div>
             <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
                 <div class="list-group">
-					<% if(geologicOthers[0].otherFileName && geologicOthers[0].otherFileName != {}){ %>
+					<% if(geologicOthers.length > 0 && geologicOthers[0].otherFileName ){ %>
 						<% geologicOthers.forEach(function(el){%>
 							<a href="../public/uploads/files/geologic/other/<%= el.otherFile.filename %>" class="list-group-item hover_blue"><%= el.otherFileName %></a>
 						<% }) %>

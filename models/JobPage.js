@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var JobPage = new keystone.List('job_page', { defaultColumns: 'createdAt' });
+var JobPage = new keystone.List('jobPage', { defaultColumns: 'createdAt' });
 JobPage.add(
 	'Top Section',
 	{
@@ -127,6 +127,24 @@ JobPage.add(
 			default: '',
 			label: '其他招聘板块-描述',
 			note: '不超过50字',
+		},
+	},
+	'footer Contact Section', {
+		contactPerson: {
+			type: Types.Text,
+			default: '示例: 赵小姐',
+			label: '联系人',
+			note: '不超过10字',
+		},
+		contactPhone: {
+			type: Types.Text,
+			default: '示例: 22203555-3547',
+			label: '联系电话',
+		},
+		contactEmail: {
+			type: Types.Email,
+			default: '示例：recruit@sangrui.com',
+			label: '联系邮箱',
 		},
 	},
 	'Gerneral Field',

@@ -13,17 +13,12 @@ exports = module.exports = function (req, res) {
 	view.query('cases', Cases.model.findOne({}).sort({ createdAt: 'desc' }));
 	view.on('init', function (next) {
 		CasesSeries.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
-			// let data = { data: results[0] };
-			// console.log(results);
-			locals.casesSeries = results;
+			if (!err && results.length) locals.casesSeries = results;
+			else locals.casesSeries = {};
 			next();
 		});
 	});
-	// view.query('mainHeader', MainHeader.model.findOne({}).sort({ createdAt: 'desc' }));
-	// locals.cases = {};
 
 	// Render the view
-	// view.render('index');
-	// view.render('mainHeader');
 	view.render('cases');
 };

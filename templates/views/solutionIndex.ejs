@@ -16,13 +16,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-xs-12">
-                <!-- <h2>Lean GU900无缝覆盖解决方案</h2> -->
-                <p>
-									致力于为客户提供当前及未来所需可持续性的、高价值的整体解决方案。
-                </p>
+				<%= (solutionIndex && solutionIndex.topDesc ) ? solutionIndex.topDesc : '' %>
+                <!-- <p>
+					致力于为客户提供当前及未来所需可持续性的、高价值的整体解决方案。
+                </p> -->
             </div>
             <div class="col-md-6 col-xs-12">
-                <img src="/images/solutions/top_pic_3.png" style="width: 100%"></img>
+                <img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.topRightImg.filename ) ? solutionIndex.topRightImg.filename : '../../../images/solutions/top_pic_3.png' %>" style="width: 100%"></img>
             </div>
         </div>
     </div>
@@ -34,11 +34,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
-						<img src="/images/solutions/antenae_index_1.jpg" alt="通信"/>
+						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.antenaeImg.filename ) ? solutionIndex.antenaeImg.filename : '../../../images/solutions/antenae_index_1.jpg' %>" alt="通信"/>
 						<figcaption>
-							<h2>通信</h2>
+							<h2><%= (solutionIndex && solutionIndex.antenaeTitle ) ? solutionIndex.antenaeTitle : '通信' %></h2>
 							<p>
-								专业基站天线厂商和无线网络覆盖信号改善整体解决方案提供商
+								<%= (solutionIndex && solutionIndex.antenaeDesc ) ? solutionIndex.antenaeDesc : '专业基站天线厂商和无线网络覆盖信号改善整体解决方案提供商' %>
                             </p>
 							<a href="/solutions/antenae">View more</a>
 						</figcaption>			
@@ -49,11 +49,11 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
-						<img src="/images/solutions/geo_1.png" alt="地质环境"/>
+						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.geoImg.filename ) ? solutionIndex.geoImg.filename : '../../../images/solutions/geo_1.png' %>" alt="地质环境"/>
 						<figcaption>
-							<h2>地质环境</h2>
+							<h2><%= (solutionIndex && solutionIndex.geoTitle ) ? solutionIndex.geoTitle : '地质环境' %></h2>
 							<p>
-							    24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值
+								<%= (solutionIndex && solutionIndex.geoDesc ) ? solutionIndex.geoDesc : '24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值' %>
                             </p>
 							<a href="/solutions/geologic">View more</a>
 						</figcaption>			
@@ -63,13 +63,13 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
-						<img src="/images/solutions/water_2.jpg" alt="水利电力"/>
+						<img src=" /uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.waterImg.filename ) ? solutionIndex.waterImg.filename : '../../../images/solutions/water_2.jpg' %>" alt="水利电力"/>
 						<figcaption>
-							<h2>水利电力</h2>
+							<h2><%= (solutionIndex && solutionIndex.waterTitle ) ? solutionIndex.waterTitle : '水利电力' %></h2>
 							<p>
-							    24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值
+								<%= (solutionIndex && solutionIndex.waterDesc ) ? solutionIndex.waterDesc : '24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值' %>
                             </p>
-							<a href="#">View more</a>
+							<a href="javascript:void(0)" class="devMode">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
@@ -81,13 +81,13 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
-						<img src="/images/solutions/transport_index_1.jpg" alt="智能交通"/>
+						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.aiImg.filename ) ? solutionIndex.aiImg.filename : '../../../images/solutions/transport_index_1.jpg' %>" alt="智能交通"/>
 						<figcaption>
-							<h2>智能交通</h2>
+							<h2><%= (solutionIndex && solutionIndex.aiTitle ) ? solutionIndex.aiTitle : '智能交通' %></h2>
 							<p>
-							    24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值
+								<%= (solutionIndex && solutionIndex.aiDesc ) ? solutionIndex.aiDesc : '24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值' %>
                             </p>
-							<a href="#">View more</a>
+							<a href="javascript:void(0)" class="devMode">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
@@ -95,13 +95,13 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
-						<img src="/images/solutions/chemistry_index_2.jpg" alt="石油化工"/>
+						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.chemiImg.filename ) ? solutionIndex.chemiImg.filename : '../../../images/solutions/chemistry_index_2.jpg' %>" alt="石油化工"/>
 						<figcaption>
-							<h2>石油化工</h2>
+							<h2><%= (solutionIndex && solutionIndex.chemiTitle ) ? solutionIndex.chemiTitle : '石油化工' %></h2>
 							<p>
-							    24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值
+								<%= (solutionIndex && solutionIndex.chemiDesc ) ? solutionIndex.chemiDesc : '24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值' %>
                             </p>
-							<a href="#">View more</a>
+							<a href="javascript:void(0)" class="devMode">View more</a>
 						</figcaption>			
 					</figure>
 				</div>

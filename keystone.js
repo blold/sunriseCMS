@@ -14,8 +14,8 @@ var engine = require('ejs-locals');
 // console.log(process.env.FOO);
 
 keystone.init({
-	'name': 'sunrise',
-	'brand': 'sunrise',
+	'name': 'SUNRISE',
+	'brand': 'SUNRISE',
 
 	'less': 'public',
 	'static': 'public',
@@ -23,6 +23,8 @@ keystone.init({
 	'views': 'templates/views',
 	'custom engine': engine,
 	'view engine': 'ejs',
+	'signin logo': ['/images/logo/logo.png', 200, 200],
+	'wysiwyg skin': 'lightgray',
 
 	'port': process.env.APP_ENV_PORT,
 	'env': process.env.NODE_ENV,
@@ -57,56 +59,117 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	users: 'users',
 	HomePage: [{
-		label: 'HomePage',
+		label: '主页',
 		key: 'home',
 		path: '/keystone/homes',
 	}],
+	About: [
+		{
+			label: '关于',
+			key: 'about',
+			path: '/keystone/abouts',
+		},
+	],
+	SolutionIndex: [
+		{
+			label: '解决方案-主页',
+			key: 'solutionIndex',
+			path: '/keystone/solution-indices',
+		},
+	],
 	Antenae: [
 		{
-			label: 'Anteanse',
+			label: '解决方案-通信页面',
 			key: 'antenae',
 			path: '/keystone/antenaes',
 		},
 		{
-			label: 'AntenaeSeries',
+			label: '解决方案-通信产品系列',
 			key: 'antenae_series',
 			path: '/keystone/antenae_series',
 		},
 		{
-			label: 'AntenaeOther',
+			label: '解决方案-通信其他产品',
 			key: 'antenae_other',
 			path: '/keystone/antenae_others',
 		},
 	],
 	Geologic: [
 		{
-			label: 'Geologic',
+			label: '解决方案-地质环境页面',
 			key: 'geologic',
 			path: '/keystone/geologics',
 		},
 		{
-			label: 'GeologicSeries',
+			label: '解决方案-地质环境系列',
 			key: 'geologic_series',
 			path: '/keystone/geologic_series',
 		},
 		{
-			label: 'GeologicOther',
+			label: '解决方案-地质环境其他产品',
 			key: 'geologic_other',
 			path: '/keystone/geologic_others',
 		},
 	],
+	News: [
+		{
+			label: '新闻',
+			key: 'news',
+			path: '/keystone/news',
+		},
+	],
 	Cases: [
 		{
-			label: 'Cases',
+			label: '案例主页',
 			key: 'cases',
 			path: '/keystone/cases',
 		},
 		{
-			label: 'CasesSeries',
+			label: '案例系列',
 			key: 'cases_series',
 			path: '/keystone/cases_series',
 		},
 	],
+	Team: [
+		{
+			label: '团队',
+			key: 'team',
+			path: '/keystone/teams',
+		},
+	],
+	Job: [
+		{
+			label: '招聘主页',
+			key: 'jobPage',
+			path: '/keystone/job-pages',
+		},
+		{
+			label: '招聘岗位',
+			key: 'job',
+			path: '/keystone/jobs',
+		},
+	],
+	Enquiry: [
+		{
+			label: '咨询投诉',
+			key: 'enquiry',
+			path: '/keystone/enquiries',
+		},
+	],
+	// Header: [
+	// 	{
+	// 		label: 'MainHeader',
+	// 		key: 'mainHeader',
+	// 		path: '/keystone/main-headers',
+	// 	},
+	// ],
+	// Footer: [
+	// 	{
+	// 		label: 'MainFooter',
+	// 		key: 'mainFoooter',
+	// 		path: '/keystone/main-footers',
+	// 	},
+	// ],
 });
 
 // Start Keystone to connect to your database and initialise the web server

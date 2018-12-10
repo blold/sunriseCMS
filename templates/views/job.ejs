@@ -26,27 +26,25 @@
 	<div class="main_blc">
 		<div class="container">
 			<h4 class="text-center">
-				<%= (jobPage && jobPage.mainTitle != {}) ? jobPage.mainTitle :
+				<%= (jobPage && jobPage.mainTitle ) ? jobPage.mainTitle :
 				'你想做什么？' %>
 			</h4>
-
-			<% console.log(jobPage)%>
 			<div class="row">
 				<div class="col-md-4 col-sm-12 job_card">
 					<div class="bordEffe wow bounceInUp job_blc">
 						<div class="card_top_blc">
-							<% if (jobPage.techJobImage) { %>
+							<% if (jobPage && jobPage.techJobImage) { %>
 								<img src="/uploads/img/job/<%= jobPage.techJobImage.filename || '../../../images/jobs/tech.jpg' %> " alt="" />
 							<% }else{%>
-								<img src="/images/jobs/tech.jpg' %> " alt="" />
+								<img src="/images/jobs/tech.jpg " alt="" />
 							<% }%>
 						</div>
 						<div class="main_content_blc">
 							<h4 id="job_title1">
-								<%= (jobPage && jobPage.techJobTitle != '') ? jobPage.techJobTitle : '技术与科技' %>
+								<%= (jobPage && jobPage.techJobTitle) ? jobPage.techJobTitle : '技术与科技' %>
 							</h4>
 							<p>
-								<%= (jobPage && jobPage.techJobDesc != '') ? jobPage.techJobDesc : 'Develop the products and tools of the future for billions of users.' %>
+								<%= (jobPage && jobPage.techJobDesc ) ? jobPage.techJobDesc : 'Develop the products and tools of the future for billions of users.' %>
 							</p>
 						</div>
 						<div class="footer_blc">
@@ -64,18 +62,18 @@
 					<div class="bordEffe wow bounceInUp">
 						<div class="bordEffe job_blc">
 							<div class="card_top_blc">
-								<% if (jobPage.busiJobImage) { %>
+								<% if (jobPage && jobPage.busiJobImage) { %>
 									<img src="/uploads/img/job/<%= jobPage.busiJobImage.filename || '../../../images/jobs/bus.jpeg' %> " alt="" />
 								<% }else{%>
-									<img src="/images/jobs/bus.jpeg' %> " alt="" />
+									<img src="/images/jobs/bus.jpeg" alt="" />
 								<% }%>
 							</div>
 							<div class="main_content_blc">
 								<h4 id="job_title2">
-										<%= (jobPage && jobPage.busiJobTitle != '') ? jobPage.busiJobTitle : '管理及商务' %>
+										<%= (jobPage && jobPage.busiJobTitle ) ? jobPage.busiJobTitle : '管理及商务' %>
 									</h4>
 									<p>
-										<%= (jobPage && jobPage.busiJobDesc != '') ? jobPage.busiJobDesc : 'Develop the products and tools of the future for billions of users.' %>
+										<%= (jobPage && jobPage.busiJobDesc ) ? jobPage.busiJobDesc : 'Develop the products and tools of the future for billions of users.' %>
 									</p>
 							</div>
 							<div class="footer_blc">
@@ -94,18 +92,18 @@
 						<div class="bordEffe wow bounceInUp">
 							<div class="bordEffe job_blc">
 								<div class="card_top_blc">
-									<% if (jobPage.otherJobImage) { %>
+									<% if (jobPage && jobPage.otherJobImage) { %>
 										<img src="/uploads/img/job/<%= jobPage.otherJobImage.filename || '../../../images/jobs/other.jpg' %> " alt="" />
 									<% }else{%>
-										<img src="/images/jobs/other.jpg' %> " alt="" />
+										<img src="/images/jobs/other.jpg" alt="" />
 									<% }%>
 								</div>
 								<div class="main_content_blc">
 										<h4 id="job_title2">
-											<%= (jobPage && jobPage.otherJobTitle != '') ? jobPage.otherJobTitle : '管理及商务' %>
+											<%= (jobPage && jobPage.otherJobTitle ) ? jobPage.otherJobTitle : '管理及商务' %>
 										</h4>
 										<p>
-											<%= (jobPage && jobPage.otherJobTitle != '') ? jobPage.otherJobTitle : 'Develop the products and tools of the future for billions of users.' %>
+											<%= (jobPage && jobPage.otherJobTitle ) ? jobPage.otherJobTitle : 'Develop the products and tools of the future for billions of users.' %>
 										</p>
 								</div>
 								<div class="footer_blc">
@@ -174,15 +172,15 @@
 					<div class="contact_body_blc">
 						<div class="detail_contact_blc">
 							<label>联系人</label>
-							<p>赵小姐</p>
+							<p><%= (jobPage && jobPage.contactPerson ) ? jobPage.contactPerson : '赵小姐' %></p>
 						</div>
 						<div class="detail_contact_blc">
 							<label>联系电话</label>
-							<p>22203555-3547</p>
+							<p><%= (jobPage && jobPage.contactPhone ) ? jobPage.contactPhone : '22203555-3547' %></p>
 						</div>
 						<div class="detail_contact_blc">
 							<label>联系邮箱</label>
-							<p>recruit@sangrui.com</p>
+							<p><%= (jobPage && jobPage.contactEmail ) ? jobPage.contactEmail : 'recruit@sangrui.com' %></p>
 						</div>
 					</div>
 				</div>

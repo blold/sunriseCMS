@@ -15,136 +15,22 @@
 <section class="team_blc" id="team_section">
     <div class="container">
         <div class="row">
-			<% if(team && team.name != {}){%>
+			<% if(team && team.name){%>
 			<div class="col-md-4">
 				<div class="team_blc">
-						<div class="team_img_blc">
-							<a ><img src="/uploads/img/team/<%= team.img.filename || '../../images/team/team_noImg.png'%>" alt=""></a>
+					<div class="team_img_blc">
+						<a ><img src="/uploads/img/team/<%= team.img.filename || '../../images/team/team_noImg.png'%>" alt=""></a>
+					</div>
+					<div class="team_main">
+						<h4 class="team_name"><%= team.name %></h4>
+						<div class="team_status"><%= team.title %></div>
+						<div class="team_desc">
+								<%= team.desc %>
 						</div>
-						<div class="team_main">
-							<h4 class="team_name"><%= team.name %></h4>
-							<div class="team_status"><%= team.title %></div>
-							<div class="team_desc">
-									<%= team.desc %>
-							</div>
-						</div>
+					</div>
 				</div>
 			</div> 
 			<%}%>
-            <!-- <div class="col-md-4">
-               <div class="team_blc">
-                    <div class="team_img_blc">
-                        <a ><img src="/images/team/team_member_doc_1_bw.png" alt=""></a>
-                    </div>
-                    <div class="team_main">
-                        <h4 class="team_name">张文梅</h4>
-                        <div class="team_status">博士,教授,博士生导师</div>
-                        <div class="team_desc">
-                                毕业于上海交通大学获得电磁场与微波技术专业博士学位，2008年、2010年新加坡南洋理工大学访问学者;
-                                山西省高校青年学术带头人，太原市科技拔尖创新人才；山西省高校工委、省教育厅党组联系的高级专家；<br>
-                                从事射频/微波集成电路、天线、电磁兼容等方面的研究工作；主持完成国家自然科学基金项目2项，教育部博士点基金、国家博士后特别资助项目、山西省自然科学基金、省高校青年学术带头人
-                        </div>
-                    </div>
-               </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team_blc">
-                        <div class="team_img_blc">
-                            <a ><img src="/images/team/team_member_doc_2_bw.png" alt=""></a>
-                        </div>
-                        <div class="team_main">
-                            <h4 class="team_name">韩丽萍</h4>
-                            <div class="team_status">博士，副教授</div>
-                            <div class="team_desc">
-                                    2010年于山西大学获博士学位，研究领域为射波集成电路与微带天线目前主持完成国家基金、省基金项目一项，获山西省科学技术三等奖2项；获得授权发明专利5项，发表论文40篇，其中被SCI收录20篇。
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team_blc">
-                        <div class="team_img_blc">
-                            <a ><img src="/images/team/team_member_doc_3_bw.png" alt=""></a>
-                        </div>
-                        <div class="team_main">
-                            <h4 class="team_name">马润波</h4>
-                            <div class="team_status">博士，副教授</div>
-                            <div class="team_desc">
-                                    2010年于山西大学获博士学位，研究领域为射波集成电路与微带天线，目前主持完成和在研省基金项目一项，获得授权发明专利5项，发表论文30篇，其中被SCI收录22篇。
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-				<div class="team_blc">
-						<div class="team_img_blc">
-							<a ><img src="/images/team/team_noImg.png" alt=""></a>
-						</div>
-						<div class="team_main">
-							<h4 class="team_name">陈新伟</h4>
-							<div class="team_status">博士，副教授</div>
-							<div class="team_desc">
-									2013年于山西大学获博士学位，研究领域为射波集成电路与微带天线，目前主持省基金项目一项，获山西省科学技术三等奖2项；获得授权发明专利5项，发表论文20篇，其中被SCI收录15篇。
-							</div>
-						</div>
-				</div>
-            </div>
-            <div class="col-md-4">
-                <div class="team_blc">
-                        <div class="team_img_blc">
-                            <a ><img src="/images/team/team_member_1_bw.png" alt=""></a>
-                        </div>
-                        <div class="team_main">
-                            <h4 class="team_name">刘沛秋</h4>
-                            <div class="team_status">研发中心总监，高级射频工程师</div>
-                            <div class="team_desc">
-                                    毕业于广东工业大学电子信息工程专业，获学士学位。多年来从事射频与微波方向技术研究及产品开发，积累了丰富的研发管理及技术研究经验，先后申请发明及实用实新型专利5项。
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="team_blc">
-                        <div class="team_img_blc">
-                            <a ><img src="/images/team/team_member_2_bw.png" alt=""></a>
-                        </div>
-                        <div class="team_main">
-                            <h4 class="team_name">左建宏</h4>
-                            <div class="team_status">研发中心技术总监，高级射频工程师</div>
-                            <div class="team_desc">
-                                    毕业于北京印刷学院与山西大学获得学士与硕士学位。发表SCI检索和EI学术论文检索3篇，申请发明和实用新型专利7项。
-                            </div>
-                        </div>
-                </div>
-            </div>   
-            <div class="col-md-4">
-                <div class="team_blc">
-                        <div class="team_img_blc">
-                            <a ><img src="/images/team/team_member_3_bw.png" alt=""></a>
-                        </div>
-                        <div class="team_main">
-                            <h4 class="team_name">全小红</h4>
-                            <div class="team_status">嵌入式软件工程师</div>
-                            <div class="team_desc">
-                                    毕业于昆明理工大学物理电子学专业，获得硕士学位，在读研期间参与南方电网公司科技项目——微电网系统多元复合储能技术研究，并对项目的进展有重要贡献，发表过3篇学术论文。毕业后至今一直从事软件方面的工作，对嵌入式软件以及数字信号处理有较为深入的理解。
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-				<div class="team_blc">
-						<div class="team_img_blc">
-							<a ><img src="/images/team/team_member_4_bw.png" alt=""></a>
-						</div>
-						<div class="team_main">
-							<h4 class="team_name">张洪省</h4>
-							<div class="team_status">嵌入式硬件工程师</div>
-							<div class="team_desc">
-									毕业于西安电子科技大学电子工程系获得学士学位，参与无线探测事业部建设。在本项目中负责嵌入式硬件、电源等电路工作。
-							</div>
-						</div>
-				</div>
-            </div>                 -->
         </div>
     </div>
 </section>
