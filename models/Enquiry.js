@@ -3,6 +3,7 @@ var Types = keystone.Field.Types;
 
 var Enquiry = new keystone.List('enquiry', {
 	nocreate: true,
+	defaultColumns: 'name, email, subject, createdAt',
 });
 
 Enquiry.add({

@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var JobPage = new keystone.List('jobPage', { defaultColumns: 'createdAt' });
+var JobPage = new keystone.List('jobPage', { defaultColumns: 'bigRotateTitle1, mainTitle, contactPerson, contactPhone, contactEmail, createdAt' });
 JobPage.add(
 	'Top Section',
 	{

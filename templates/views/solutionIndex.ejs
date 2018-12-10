@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-xs-12">
-				<%= (solutionIndex && solutionIndex.topDesc ) ? solutionIndex.topDesc : '' %>
+				<%- (solutionIndex && solutionIndex.topDesc ) ? solutionIndex.topDesc : '' %>
                 <!-- <p>
 					致力于为客户提供当前及未来所需可持续性的、高价值的整体解决方案。
                 </p> -->
@@ -38,7 +38,7 @@
 						<figcaption>
 							<h2><%= (solutionIndex && solutionIndex.antenaeTitle ) ? solutionIndex.antenaeTitle : '通信' %></h2>
 							<p>
-								<%= (solutionIndex && solutionIndex.antenaeDesc ) ? solutionIndex.antenaeDesc : '专业基站天线厂商和无线网络覆盖信号改善整体解决方案提供商' %>
+								<%- (solutionIndex && solutionIndex.antenaeDesc ) ? solutionIndex.antenaeDesc : '专业基站天线厂商和无线网络覆盖信号改善整体解决方案提供商' %>
                             </p>
 							<a href="/solutions/antenae">View more</a>
 						</figcaption>			

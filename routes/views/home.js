@@ -13,7 +13,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'home';
 	view.query(
 		'home',
-		Home.model.findOne({}).sort({ createdAt: 'desc' } || (locals.home = {}))
+		Home.model.findOne({}).sort({ createdAt: 'desc' })
 	);
 	// view.query('mainHeader', MainHeader.model.findOne({}).sort({ createdAt: 'desc' }));
 	view.on('init', function (next) {
@@ -23,8 +23,8 @@ exports = module.exports = function (req, res) {
 			.exec(function (err, results) {
 				if (!err && results.length > 0) locals.header = results[0];
 				else locals.header = {};
+				next();
 			});
-		next();
 	});
 	view.on('init', function (next) {
 		MainFooter.model
@@ -33,8 +33,8 @@ exports = module.exports = function (req, res) {
 			.exec(function (err, results) {
 				if (!err && results.length > 0) locals.footer = results[0];
 				else locals.footer = {};
+				next();
 			});
-		next();
 	});
 	view.on('init', function (next) {
 		Home.model
@@ -56,8 +56,8 @@ exports = module.exports = function (req, res) {
 				} else {
 					locals.teams = null;
 				}
+				next();
 			});
-		next();
 	});
 
 	view.render('home');

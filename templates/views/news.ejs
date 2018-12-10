@@ -22,21 +22,21 @@
 							<a href="#" class="innerComponent bordEffe " id="new2">
 								<div class="leftBlc">
 										<div class="date_blc">
-												<span><%= (el && el._.newsTime != {}) ? moment(el.newsTime).locale('zh-cn').format("LL") : '' %></span>
+												<span><%= (el && el._.newsTime ) ? moment(el.newsTime).locale('zh-cn').format("LL") : '' %></span>
 										</div>
 										<div class="main_title_blc">
-												<h3><%= (el && el.shortTitle != {}) ? el.shortTitle : '' %></h3>
+												<h3><%= (el && el.shortTitle ) ? el.shortTitle : '' %></h3>
 										</div>
 										<div class="main_content" style="display: none">
-												<p class="main_content_detail1"><%= (el && el.newsOrigin != {}) ? el.newsOrigin : '' %></p>
+												<p class="main_content_detail1"><%= (el && el.newsOrigin ) ? el.newsOrigin : '' %></p>
 												<p class="main_content_detail2">
-														<%= (el && el.content1 != {}) ? el.content1 : '' %>
+													<%= (el && el.content1 ) ? el.content1 : '' %>
 												</p>
 												<img src="/uploads/img/news/<%= el.contentImg.filename || '' %> " alt="">
 												<p class="main_content_detail3">                                    
-														<%= (el && el.content2 != {}) ? el.content2 : '' %>
+													<%= (el && el.content2 ) ? el.content2 : '' %>
 												</p>
-												<p class="news_linksBack"><%= (el && el.url != {}) ? el.url : '' %></p>
+												<p class="news_linksBack"><%= (el && el.url ) ? el.url : '' %></p>
 										</div>
 								</div>
 								<div class="rightBlc">

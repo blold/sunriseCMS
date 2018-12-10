@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var Cases = new keystone.List('cases');
+var Cases = new keystone.List('cases', { defaultColumns: 'img1, img2, createdAt' });
 Cases.add(
 	'Top Imagg Section', {
 		img1: { type: Types.File, initial: true, storage: storage('img/cases'), label: '图片1', note: '推荐图片尺寸 1600*450' },

@@ -27,11 +27,11 @@ function storage (path) {
  * ==========
  */
 
-var SolutionIndex = new keystone.List('solutionIndex');
+var SolutionIndex = new keystone.List('solutionIndex', { defaultColumns: 'topDesc, antenaeTitle, geoTitle, waterTitle, aiTitle, createdAt' });
 SolutionIndex.add(
 	'Top Section', {
-		topDesc: { type: Types.Html, wysiwyg: true, label: '工作内容' },
-		topRightImg: { type: Types.File, storage: storage('img/solutionIndex'), label: '右图' },
+		topDesc: { type: Types.Html, wysiwyg: true, label: '解决方案页面-总描述' },
+		topRightImg: { type: Types.File, storage: storage('img/solutionIndex'), label: '上右图' },
 	},
 	'Antenae Section', {
 		antenaeTitle: { type: Types.Text, initial: true, default: '通信', label: '板块1-名称', note: '不超过10字' },

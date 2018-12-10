@@ -99,15 +99,15 @@
 											</a>
                     </div>
 										<div class="swiper-slide">
-												<a href="<%= (home && home.subscribeNew2.href != {}) ? home.subscribeNew2.href : 'http://www.cigem.gov.cn/' %>" target="_blank">
+												<a href="<%= (home && home.subscribeNew2.href ) ? home.subscribeNew2.href : 'http://www.cigem.gov.cn/' %>" target="_blank">
 														<img src="/uploads/img/<%= (home && home.subscribeNew2.img.filename ) ? home.subscribeNew2.img.filename : '../../images/news/environ_1.jpg' %>" style="width: 100%;min-width: 300px; height: 200px;" alt="">
-														<p><%= (home && home.subscribeNew2.desc != {}) ? home.subscribeNew2.desc : '中国地质环境信息' %></p>
+														<p><%= (home && home.subscribeNew2.desc ) ? home.subscribeNew2.desc : '中国地质环境信息' %></p>
 												</a>
 											</div>
 										<div class="swiper-slide">
-												<a href="<%= (home && home.subscribeNew3.href != {}) ? home.subscribeNew2.href : 'https://www.zhihuichengshi.cn/' %>" target="_blank">
+												<a href="<%= (home && home.subscribeNew3.href ) ? home.subscribeNew2.href : 'https://www.zhihuichengshi.cn/' %>" target="_blank">
 													<img src="/uploads/img/<%= (home && home.subscribeNew3.img.filename ) ? home.subscribeNew3.img.filename : '../../images/news/smart_city2.jpg' %>" style="width: 100%;min-width: 300px; height: 200px;" alt="">
-													<p><%= (home && home.subscribeNew3.desc != {}) ? home.subscribeNew3.desc : '智慧城市，让生活更美好' %></p>
+													<p><%= (home && home.subscribeNew3.desc ) ? home.subscribeNew3.desc : '智慧城市，让生活更美好' %></p>
 											</a>
 										</div>
                   </div>
@@ -125,9 +125,9 @@
 			<div class="container wow fadeInUp">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="section-title"><%= (home && home.porfolioTitle != {}) ? home.porfolioTitle : '方案展示' %></h3>
+						<h3 class="section-title"><%= (home && home.porfolioTitle ) ? home.porfolioTitle : '方案展示' %></h3>
 						<div class="section-title-divider"></div>
-						<p class="section-description"><%= (home && home.porfolioTitle != {}) ? home.porfolioTitle : '高起点、高标准是桑瑞公司的立足之本' %></p>
+						<p class="section-description"><%= (home && home.porfolioTitle ) ? home.porfolioTitle : '高起点、高标准是桑瑞公司的立足之本' %></p>
 					</div>
 				</div>
 	
@@ -141,7 +141,7 @@
 							</div>
 						</a>
 						<h4 class="card cases_title">  
-							<a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio1.title != {}) ? home.porfolio1.title : '移动通信' %></a> 
+							<a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio1.title ) ? home.porfolio1.title : '移动通信' %></a> 
 						</h4>
 					</div>
 	
@@ -151,7 +151,7 @@
 								<span>了解更多</span>
 							</div>
 						</a>
-						<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio2.title != {}) ? home.porfolio2.title : '地质灾害' %></a> </h4>
+						<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio2.title ) ? home.porfolio2.title : '地质灾害' %></a> </h4>
 					</div>
 	
 					<div class="col-md-4">
@@ -160,7 +160,7 @@
 								<span>了解更多</span>
 							</div>
 						</a>
-						<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio3.title != {}) ? home.porfolio3.title : '水利水电' %></a> </h4>
+						<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio3.title ) ? home.porfolio3.title : '水利水电' %></a> </h4>
 					</div>
 	
 					<div class="col-md-4 mx-auto">
@@ -169,7 +169,7 @@
 								<span>了解更多</span>
 							</div>
 						</a>
-						<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio4.title != {}) ? home.porfolio4.title : '交通' %></a> </h4>
+						<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio4.title ) ? home.porfolio4.title : '交通' %></a> </h4>
 					</div>
 					<div class="col-md-4 mx-auto">
 							<a class="portfolio-item bordEffe" style="background-image: url(/uploads/img/<%= (home && home.porfolio5.img.filename ) ? home.porfolio5.img.filename : '../../images/cases/cases_5.png'%>)" href="/cases">
@@ -177,7 +177,7 @@
 									<span>了解更多</span>
 								</div>
 							</a>
-							<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio5.title != {}) ? home.porfolio5.title : '石油化工' %></a> </h4>
+							<h4 class="card cases_title">  <a href="/cases" class="effect-hover_div hvr-underline-from-center"><%= (home && home.porfolio5.title ) ? home.porfolio5.title : '石油化工' %></a> </h4>
 						</div>
 				</div>
 			</div>
@@ -200,8 +200,8 @@
 								<img src="/uploads/img/<%= (home && home.new1.img.filename ) ? home.new1.img.filename : '../../images/news/ind_right1.jpg' %>" alt="images"/>
 								<figcaption>
 									<div class="ads_first_left_blc">
-										<h2><%= (home && home.new1.title != {}) ? home.new1.title : '自动驾驶汽车到底需要哪些类型的传感器？' %></h2>
-										<p><%= (home && home.new1.desc != {}) ? home.new1.desc : '在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少' %></p>
+										<h2><%= (home && home.new1.title ) ? home.new1.title : '自动驾驶汽车到底需要哪些类型的传感器？' %></h2>
+										<p><%= (home && home.new1.desc ) ? home.new1.desc : '在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少' %></p>
 									</div>
 									<a href="/news">View more</a>
 								</figcaption>			
@@ -215,8 +215,8 @@
 									<figure class="effect-oscar">
 										<img src="/uploads/img/<%= (home && home.new2.img.filename ) ? home.new2.img.filename : '../../images/news/in_right_1.jpg' %>" alt="img09"/>
 										<figcaption>
-											<h2><%= (home && home.new2.title != {}) ? home.new2.title : '华为牵引5G核心网创新发展' %></h2>
-											<p><%= (home && home.new2.desc != {}) ? home.new2.desc : 'MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展' %></p>
+											<h2><%= (home && home.new2.title ) ? home.new2.title : '华为牵引5G核心网创新发展' %></h2>
+											<p><%= (home && home.new2.desc ) ? home.new2.desc : 'MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展' %></p>
 											<a href="/news">View more</a>
 										</figcaption>			
 									</figure>
@@ -227,8 +227,8 @@
 									<figure class="effect-oscar">
 										<img src="/uploads/img/<%= (home && home.new3.img.filename ) ? home.new3.img.filename : '../../images/news/in_right_2.jpg' %>" alt="img09"/>
 										<figcaption>
-											<h2><%= (home && home.new3.title != {}) ? home.new3.title : '激光雷达、计算机视觉和雷达谁会赢？' %></h2>
-											<p><%= (home && home.new3.title != {}) ? home.new3.title : '由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？' %></p>
+											<h2><%= (home && home.new3.title ) ? home.new3.title : '激光雷达、计算机视觉和雷达谁会赢？' %></h2>
+											<p><%= (home && home.new3.title ) ? home.new3.title : '由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？' %></p>
 											<a href="/news">View more</a>
 										</figcaption>			
 									</figure>
@@ -242,38 +242,38 @@
 
 	<!--==========================
   Team Section
-  ============================-->
+	============================-->
+	<% if(teams && teams.length > 0){%>
   <section id="team">
 			<div class="container wow fadeInUp">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="section-title"><%= (home && home.teamTitle != {}) ? home.teamTitle : '我们的团队' %></h3>
+						<h3 class="section-title"><%= (home && home.teamTitle ) ? home.teamTitle : '我们的团队' %></h3>
 						<div class="section-title-divider"></div>
-						<p class="section-description"><%= (home && home.teamDesc != {}) ? home.teamDesc : '以人为本，是企业的核心' %></p>
+						<p class="section-description"><%= (home && home.teamDesc ) ? home.teamDesc : '以人为本，是企业的核心' %></p>
 					</div>
 				</div>
 				
 				<div class="row">
-					<% if(teams && teams.length > 0){%>
 						<% teams.forEach(function(el){%>
 						<div class="col-md-3">
 							<div class="member wow flipInX">
 								<div class="pic"><img src="/uploads/img/team/<%= el.img.filename %>" alt=""></div>
 								<h4><%= el.name %></h4>
 								<span><%= el.title %></span>
-								<div class="social">
+								<!-- <div class="social">
 									<a href=""><i class="fa fa-qq"></i></a>
 									<a href=""><i class="fa fa-wechat"></i></a>
 									<a href=""><i class="fa fa-weibo"></i></a>
 									<a href=""><i class="fa fa-linkedin"></i></a>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<%})%>
-					<%}%>
 				</div>
 			</div>
 		</section>
+		<%}%>
 
     <!--==========================
 		MAP Section
@@ -289,9 +289,9 @@
 				<div class="container wow fadeInUp">
 					<div class="row">
 						<div class="col-md-12">
-							<h3 class="section-title"><%= (home && home.contactTitle != {}) ? home.contactTitle : '联系我们' %></h3>
+							<h3 class="section-title"><%= (home && home.contactTitle ) ? home.contactTitle : '联系我们' %></h3>
 							<div class="section-title-divider"></div>
-							<p class="section-description"><%= (home && home.contactDesc != {}) ? home.contactDesc : '能人所未能、愿人所不愿、思人所匪思' %></p>
+							<p class="section-description"><%= (home && home.contactDesc ) ? home.contactDesc : '能人所未能、愿人所不愿、思人所匪思' %></p>
 						</div>
 					</div>
 		
@@ -300,17 +300,17 @@
 							<div class="info">
 								<div>
 									<i class="fa fa-map-marker"></i>
-									<p><%= (home && home.address != {}) ? home.address : '广州市高新技术产业开发区科学城开源大道182号' %></p>
+									<p><%= (home && home.address ) ? home.address : '广州市高新技术产业开发区科学城开源大道182号' %></p>
 								</div>
 		
 								<div>
 									<i class="fa fa-envelope"></i>
-									<p><%= (home && home.contactEmail != {}) ? home.contactEmail : 'market@sangrui.com' %></p>
+									<p><%= (home && home.contactEmail ) ? home.contactEmail : 'market@sangrui.com' %></p>
 								</div>
 		
 								<div>
 									<i class="fa fa-phone"></i>
-									<p><%= (home && home.contactPhone != {}) ? home.contactPhone : '(+86)2022203555' %></p>
+									<p><%= (home && home.contactPhone ) ? home.contactPhone : '(+86)2022203555' %></p>
 								</div>
 							</div>
 						</div>
@@ -321,19 +321,19 @@
 								<div id="errormessage"></div>
 								<form action="" method="post" role="form" class="contactForm">
 									<div class="form-group">
-										<input type="text" name="name" class="form-control" id="name" placeholder="姓名" data-rule="minlen:2" data-msg="请输入你的名字" value="andy" />
+										<input type="text" name="name" class="form-control" id="name" placeholder="姓名" data-rule="minlen:2" data-msg="请输入你的名字" />
 										<div class="validation"></div>
 									</div>
 									<div class="form-group">
-										<input type="email" class="form-control" name="email" id="email" placeholder="邮箱" data-rule="email" data-msg="请输入有效邮箱地址" value="123@123.com" />
+										<input type="email" class="form-control" name="email" id="email" placeholder="邮箱" data-rule="email" data-msg="请输入有效邮箱地址" />
 										<div class="validation"></div>
 									</div>
 									<div class="form-group">
-										<input type="text" class="form-control" name="subject" id="subject" placeholder="主题" data-rule="minlen:2" data-msg="请输入至少四个字" value="1233"/>
+										<input type="text" class="form-control" name="subject" id="subject" placeholder="主题" data-rule="minlen:2" data-msg="请输入至少四个字"/>
 										<div class="validation"></div>
 									</div>
 									<div class="form-group">
-										<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="请输入内容信息" placeholder="信息" value="是分身乏术"></textarea>
+										<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="请输入内容信息" placeholder="信息"></textarea>
 										<div class="validation"></div>
 									</div>
 									<div class="text-center"><button style="width: 100%" type="submit">发送</button></div>

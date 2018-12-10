@@ -27,7 +27,7 @@ function storage (path) {
  * ==========
  */
 
-var News = new keystone.List('news');
+var News = new keystone.List('news', { defaultColumns: 'shortTitle, newsOrigin, createdAt' });
 News.add(
 	'News Display Section', {
 		newsTime: { type: Types.Date, initial: true, required: true, default: moment('1995-12-25').locale('en'), index: true, label: '新闻时间' },
@@ -36,10 +36,10 @@ News.add(
 	},
 	'News Content', {
 		newsOrigin: { type: Types.Text, default: '不超过20字', label: '新闻来源' },
+		contentImg: { type: Types.File, storage: storage('img/news'), label: '新闻详细内容-图片' },
 		content1: { type: Types.Textarea, label: '新闻详细内容-第一段' },
 		content2: { type: Types.Textarea, label: '新闻详细内容-第二段' },
-		url: { type: Types.Url, label: '新闻原链接' },
-		contentImg: { type: Types.File, storage: storage('img/news'), label: '新闻内容图片' },
+		url: { type: Types.Url, label: '新闻原链接', note: '格式： http://www.baidu.com' },
 	},
 	'Gerneral Field', {
 		createdAt: { type: Date, default: Date.now, noedit: true },
