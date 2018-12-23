@@ -41,6 +41,7 @@ exports = module.exports = function (req, res) {
 			.findOne({})
 			.sort({ createdAt: 'desc' })
 			.exec(function (err, result) {
+				locals.teams = null;
 				if (!err && result) {
 					let teamArray = [
 						result.team1,
@@ -53,9 +54,7 @@ exports = module.exports = function (req, res) {
 						.exec(function (err, results) {
 							locals.teams = results;
 						});
-				} else {
-					locals.teams = null;
-				}
+				};
 				next();
 			});
 	});

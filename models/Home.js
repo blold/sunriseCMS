@@ -36,7 +36,7 @@ Home.add(
 		service5Title: { type: Types.Text, required: true, default: '石油化工', label: '服务5标题' },
 		service5Desc: { type: Types.Textarea, collapse: true, default: '雷达物位计在化工装置各类液态介质不同工艺条件下均能实现液位的自动检测，提高了催化剂的生产自动化水平，成效显著', label: '服务5短描述' },
 	},
-	'Subscribe', {
+	'News 1 Section', {
 		subscribeTtile: { type: Types.Text, initial: true, required: true, default: '新闻中心', label: '轮转新闻-大标题' },
 		subscribeTtile2: { type: Types.Text, required: true, default: 'NEWS', label: '轮转新闻-子标题' },
 		subscribeNew1: {
@@ -58,45 +58,45 @@ Home.add(
 			// checkbox: { type: Boolean },
 		},
 	},
-	'Porfolio Section', {
+	'Cases Section', {
 		porfolioTitle: { type: Types.Text, initial: true, required: true, default: '方案展示', label: '方案展示-大标题' },
 		porfolioShortDesc: { type: Types.Text, required: true, default: '高起点、高标准是桑瑞公司的立足之本', label: '方案展示-小标题' },
 		porfolio1: {
 			img: { type: Types.File, storage: Storage, label: '方案展示1-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '方案展示-解决方案1', note: '移动通信' },
+			title: { type: Types.Text, default: '移动通信', label: '方案展示-解决方案1', note: '移动通信' },
 		},
 		porfolio2: {
 			img: { type: Types.File, storage: Storage, label: '方案展示2-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '方案展示-解决方案2', note: '地质灾害' },
+			title: { type: Types.Text, default: '地质灾害', label: '方案展示-解决方案2', note: '地质灾害' },
 		},
 		porfolio3: {
 			img: { type: Types.File, storage: Storage, label: '方案展示3-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '方案展示-解决方案3', note: '水利水电' },
+			title: { type: Types.Text, default: '水利水电', label: '方案展示-解决方案3', note: '水利水电' },
 		},
 		porfolio4: {
 			img: { type: Types.File, storage: Storage, label: '方案展示4-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '方案展示-解决方案4', note: '交通' },
+			title: { type: Types.Text, default: '交通', label: '方案展示-解决方案4', note: '交通' },
 		},
 		porfolio5: {
 			img: { type: Types.File, storage: Storage, label: '方案展示5-图片' },
-			title: { collapse: true, type: Types.Text, label: '方案展示-解决方案5', note: '石油化工' },
+			title: { type: Types.Text, default: '石油化工', label: '方案展示-解决方案5', note: '石油化工' },
 		},
 	},
-	'News Section', {
+	'News 2 Section', {
 		new1: {
 			img: { type: Types.File, storage: Storage, label: '新闻1-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '新闻1-标题', note: '不超过10字' },
-			desc: { collapse: true, type: Types.Text, default: '', label: '新闻1-描述', note: '不超过30字' },
+			title: { type: Types.Text, default: '自动驾驶汽车到底需要哪些类型的传感器？', label: '新闻1-标题', note: '不超过10字' },
+			desc: { type: Types.Textarea, default: '在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少', label: '新闻1-描述', note: '不超过30字' },
 		},
 		new2: {
 			img: { type: Types.File, storage: Storage, label: '新闻2-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '新闻2-标题', note: '不超过10字' },
-			desc: { collapse: true, type: Types.Text, default: '', label: '新闻2-描述', note: '不超过30字' },
+			title: { type: Types.Text, default: '华为牵引5G核心网创新发展', label: '新闻2-标题', note: '不超过10字' },
+			desc: { type: Types.Textarea, default: 'MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展', label: '新闻2-描述', note: '不超过30字' },
 		},
 		new3: {
 			img: { type: Types.File, storage: Storage, label: '新闻3-图片' },
-			title: { collapse: true, type: Types.Text, default: '', label: '新闻3-标题', note: '不超过10字' },
-			desc: { collapse: true, type: Types.Text, default: '', label: '新闻3-描述', note: '不超过30字' },
+			title: { type: Types.Text, default: '激光雷达、计算机视觉和雷达谁会赢？', label: '新闻3-标题', note: '不超过10字' },
+			desc: { type: Types.Textarea, default: '由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？', label: '新闻3-描述', note: '不超过30字' },
 		},
 	},
 	'Team Section', {

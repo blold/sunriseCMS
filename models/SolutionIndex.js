@@ -34,7 +34,7 @@ SolutionIndex.add(
 		topRightImg: { type: Types.File, storage: storage('img/solutionIndex'), label: '上右图' },
 	},
 	'Antenae Section', {
-		antenaeTitle: { type: Types.Text, initial: true, default: '通信', label: '板块1-名称', note: '不超过10字' },
+		antenaeTitle: { type: Types.Text, default: '通信', label: '板块1-名称', note: '不超过10字' },
 		antenaeImg: { type: Types.File, storage: storage('img/solutionIndex'), label: '板块1-图片' },
 		antenaeDesc: { type: Types.Textarea, label: '板块1-描述', note: '不超过100字' },
 	},
