@@ -22,32 +22,55 @@
                     <p>
 						<%- (antenae && antenae.antenaeDesc ) ? antenae.antenaeDesc : '桑瑞通信始终以技术创新为企业持续发展的核心，先后成功开发了达到国际先进水平的GSM、CDMA、3G、4G、LTE以及WiFi / WiMAX基站电调天线及其集中控制优化系统。通信产品主要包括移动通信基站天线、一体化美化天线、美化外罩产品等。同时，公司可根据客户需求，为其量身定做包括网络架构设计、产品配置选型、检测及优化服务等内容的移动覆盖综合解决方案。' %>
                     </p>
-                </div>
-                <div class="antenae_line_blc">
-                    <div class="row">
-                        <div class="col-12">
-                            <h3><%= (antenae && antenae.mainTitle ) ? antenae.mainTitle : '通讯天线' %></h3>
-						</div>
-						<% if(antenaeSeries && antenaeSeries.length > 0 ){ %>
+				</div>
+				<% if(antenaeSeries && antenaeSeries.length > 0 ){ %>
+					<div class="antenae_line_blc">
+						<div class="row">
+							<div class="col-12">
+								<h3><%= (antenae && antenae.mainTitle1 ) ? antenae.mainTitle1 : '通讯天线' %></h3>
+							</div>
 							<% antenaeSeries.forEach(function(el){ %>
-								<div class="col-md-4 col-xs-12">
-									<div class="card wow flipInX">
-										<img class="card-img-top" src="/uploads/img/antenae/series/<%= el.solutionImg.filename %>" alt="Card image cap">
-										<div class="card-body">
-											<h4 class="card-title"><%= el.solutionTitle || '系列名称' %></h4>
-											<p class="card-text content_p">
-												<%= el.solutionDesc || '系列描述' %>
-											</p>
+								<% if (el.solutionType == '通信天线'){%>
+									<div class="col-md-4 col-xs-12">
+										<div class="card wow flipInX">
+											<img class="card-img-top" src="/uploads/img/antenae/series/<%= el.solutionImg.filename %>" alt="Card image cap">
+											<div class="card-body">
+												<h4 class="card-title"><%= el.solutionTitle || '系列名称' %></h4>
+												<p class="card-text content_p">
+													<%= el.solutionDesc || '系列描述' %>
+												</p>
+											</div>
+											<div class="download_blc">
+												<a href="../public/uploads/files/antenae/series/<%= el.solutionFile.filename %>" target="_blank">下载文档</a>
+											</div>
 										</div>
-										<div class="download_blc">
-											<a href="../public/uploads/files/antenae/series/<%= el.solutionFile.filename %>" target="_blank">下载文档</a>
-										</div>
-									</div>
-								</div> 
+									</div> 
+								<% } %>
 							<% }) %>
-						<% } %>
-                    </div>
-                </div>
+							<div class="col-12 border_seperate">
+								<h3><%= (antenae && antenae.mainTitle2 ) ? antenae.mainTitle2 : 'NBIOT' %></h3>
+							</div>
+							<% antenaeSeries.forEach(function(el){ %>
+								<% if (el.solutionType == 'NBIOT'){%>
+									<div class="col-md-4 col-xs-12">
+										<div class="card wow flipInX">
+											<img class="card-img-top" src="/uploads/img/antenae/series/<%= el.solutionImg.filename %>" alt="Card image cap">
+											<div class="card-body">
+												<h4 class="card-title"><%= el.solutionTitle || '系列名称' %></h4>
+												<p class="card-text content_p">
+													<%= el.solutionDesc || '系列描述' %>
+												</p>
+											</div>
+											<div class="download_blc">
+												<a href="../public/uploads/files/antenae/series/<%= el.solutionFile.filename %>" target="_blank">下载文档</a>
+											</div>
+										</div>
+									</div> 
+								<% } %>
+							<% }) %>
+						</div>
+					</div>
+				<% } %>
             </div>
             
             <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">

@@ -26,10 +26,11 @@ function storage (path) {
  * ==========
  */
 
-var AntenaeSeries = new keystone.List('antenae_series', { defaultColumns: 'solutionTitle, solutionImg, solutionFile, createdAt' });
+var AntenaeSeries = new keystone.List('antenae_series', { defaultColumns: 'solutionTitle, solutionType, solutionImg, solutionFile, createdAt' });
 AntenaeSeries.add(
 	'Main Section', {
 		solutionTitle: { type: Types.Text, default: '该系列名称', initial: true, label: '通信系列-名称', note: '不超过10字' },
+		solutionType: { type: Types.Select, initial: true, emptyOption: false, options: '通信天线, NBIOT' },
 		solutionDesc: { type: Types.Textarea, default: '该系列描述', initial: true, label: '描述' },
 		solutionImg: { type: Types.File, storage: storage('img/antenae/series'), label: '该系列图片' },
 		solutionFile: { type: Types.File, storage: storage('files/antenae/series'), label: '下载文件' },
