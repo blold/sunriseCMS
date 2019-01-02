@@ -56,7 +56,7 @@ SolutionIndex.add(
 	'Chemi Section', {
 		chemiTitle: { type: Types.Text, default: '石油化工', label: '板块5-名称', note: '不超过10字' },
 		chemiImg: { type: Types.File, storage: storage('img/solutionIndex'), label: '板块5-图片' },
-		chemiDesc: { type: Types.Textarea, label: '板块4-描述', note: '不超过100字' },
+		chemiDesc: { type: Types.Textarea, label: '板块5-描述', note: '不超过100字' },
 	},
 	'Gerneral Field', {
 		createdAt: { type: Date, default: Date.now, noedit: true },

@@ -82,23 +82,23 @@ Home.add(
 			title: { type: Types.Text, default: '石油化工', label: '方案展示-解决方案5', note: '石油化工' },
 		},
 	},
-	'News 2 Section', {
-		new1: {
-			img: { type: Types.File, storage: Storage, label: '新闻1-图片' },
-			title: { type: Types.Text, default: '自动驾驶汽车到底需要哪些类型的传感器？', label: '新闻1-标题', note: '不超过10字' },
-			desc: { type: Types.Textarea, default: '在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少', label: '新闻1-描述', note: '不超过30字' },
-		},
-		new2: {
-			img: { type: Types.File, storage: Storage, label: '新闻2-图片' },
-			title: { type: Types.Text, default: '华为牵引5G核心网创新发展', label: '新闻2-标题', note: '不超过10字' },
-			desc: { type: Types.Textarea, default: 'MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展', label: '新闻2-描述', note: '不超过30字' },
-		},
-		new3: {
-			img: { type: Types.File, storage: Storage, label: '新闻3-图片' },
-			title: { type: Types.Text, default: '激光雷达、计算机视觉和雷达谁会赢？', label: '新闻3-标题', note: '不超过10字' },
-			desc: { type: Types.Textarea, default: '由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？', label: '新闻3-描述', note: '不超过30字' },
-		},
-	},
+	// 'News 2 Section', {
+	// 	new1: {
+	// 		img: { type: Types.File, storage: Storage, label: '新闻1-图片' },
+	// 		title: { type: Types.Text, default: '自动驾驶汽车到底需要哪些类型的传感器？', label: '新闻1-标题', note: '不超过10字' },
+	// 		desc: { type: Types.Textarea, default: '在大多汽车行业专家看来，想要实现真正的全自动驾驶，雷达、摄像头和激光雷达三套系统都必不可少', label: '新闻1-描述', note: '不超过30字' },
+	// 	},
+	// 	new2: {
+	// 		img: { type: Types.File, storage: Storage, label: '新闻2-图片' },
+	// 		title: { type: Types.Text, default: '华为牵引5G核心网创新发展', label: '新闻2-标题', note: '不超过10字' },
+	// 		desc: { type: Types.Textarea, default: 'MWC2018上，华为发布并展示了使能全接入、使能全业务的5G核心网解决方案，以助力电信运营商支撑未来日新月异的业务发展', label: '新闻2-描述', note: '不超过30字' },
+	// 	},
+	// 	new3: {
+	// 		img: { type: Types.File, storage: Storage, label: '新闻3-图片' },
+	// 		title: { type: Types.Text, default: '激光雷达、计算机视觉和雷达谁会赢？', label: '新闻3-标题', note: '不超过10字' },
+	// 		desc: { type: Types.Textarea, default: '由于激光雷达价格高，产能低，许多公司都准备直接绕过高端激光雷达玩“曲线救国”，但其他技术真的可靠吗？激光雷达、计算视觉和雷达到底谁更重要呢？', label: '新闻3-描述', note: '不超过30字' },
+	// 	},
+	// },
 	'Team Section', {
 		teamTitle: { type: Types.Text, initial: true, required: true, default: '我们的团队', label: '主页团队-标题' },
 		teamDesc: { type: Types.Text, required: true, default: '以人为本，是企业的核心', label: '主页团队-短描述' },
