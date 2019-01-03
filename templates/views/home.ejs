@@ -45,11 +45,6 @@
       <div class="container">
           <div class="row">
             <div class="col-md-4 service-item">
-              <div class="service-icon"><i class="fa fa-desktop"></i></div>
-              <h4 class="service-title"><a href="/solutions/antenae"><%= (home && home.service1Title ) ? home.service1Title : '移动通信' %></a></h4>
-              <p class="service-description"><%= (home && home.service1Desc ) ? home.service1Desc : '为国内外运营商客户提供移动网络覆盖及行业应用整体解决方案和服务' %></p>
-            </div>
-            <div class="col-md-4 service-item">
               <div class="service-icon"><i class="fa fa-picture-o"></i></div>
               <h4 class="service-title"><a href="/solutions/geologic"><%= (home && home.service2Title ) ? home.service2Title : '地质环境' %></a></h4>
               <p class="service-description"><%= (home && home.service2Desc ) ? home.service2Desc : '地质环境' %></p>
@@ -58,19 +53,24 @@
               <div class="service-icon"><i class="fa fa-superpowers"></i></div>
               <h4 class="service-title"><a href="/solutions"><%= (home && home.service3Title ) ? home.service3Title : '水利电力' %></a></h4>
               <p class="service-description"><%= (home && home.service3Desc ) ? home.service3Desc : '大坝安全自动化监测系统实现了监测工程动态数据的采集、传输、数据汇集及设备控制自动化，为用户的现场监控、异地监视提供方便、高效、快捷的服务' %></p>
-            </div>
+						</div>
+						<div class="col-md-4 mx-auto service-item">
+								<div class="service-icon"><i class="fa fa-car"></i></div>
+								<h4 class="service-title"><a href="/solutions"><%= (home && home.service4Title ) ? home.service4Title : '智能交通' %></a></h4>
+								<p class="service-description"><%= (home && home.service4Desc ) ? home.service4Desc : '智能驾驶、雷达测速、无人飞机航拍测距、测速' %></p>
+							</div>
           </div>
           <div class="row">
-            <div class="col-md-4 mx-auto service-item">
-              <div class="service-icon"><i class="fa fa-car"></i></div>
-              <h4 class="service-title"><a href="/solutions"><%= (home && home.service4Title ) ? home.service4Title : '智能交通' %></a></h4>
-              <p class="service-description"><%= (home && home.service4Desc ) ? home.service4Desc : '智能驾驶、雷达测速、无人飞机航拍测距、测速' %></p>
-            </div>
             <div class="col-md-4 mx-auto service-item">
               <div class="service-icon"><i class="fa fa-industry"></i></div>
               <h4 class="service-title"><a href="/solutions"><%= (home && home.service5Title ) ? home.service5Title : '石油化工' %></a></h4>
               <p class="service-description"><%= (home && home.service5Desc ) ? home.service5Desc : '雷达物位计在化工装置各类液态介质不同工艺条件下均能实现液位的自动检测，提高了催化剂的生产自动化水平，成效显著' %></p>
-            </div>
+						</div>
+						<div class="col-md-4 service-item">
+								<div class="service-icon"><i class="fa fa-desktop"></i></div>
+								<h4 class="service-title"><a href="/solutions/antenae"><%= (home && home.service1Title ) ? home.service1Title : '移动通信' %></a></h4>
+								<p class="service-description"><%= (home && home.service1Desc ) ? home.service1Desc : '为国内外运营商客户提供移动网络覆盖及行业应用整体解决方案和服务' %></p>
+							</div>
           </div>
     </div>
   </section>
