@@ -34,21 +34,6 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
-						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.antenaeImg.filename ) ? solutionIndex.antenaeImg.filename : '../../../images/solutions/antenae_index_1.jpg' %>" alt="通信"/>
-						<figcaption>
-							<h2><%= (solutionIndex && solutionIndex.antenaeTitle ) ? solutionIndex.antenaeTitle : '通信' %></h2>
-							<p>
-								<%- (solutionIndex && solutionIndex.antenaeDesc ) ? solutionIndex.antenaeDesc : '专业基站天线厂商和无线网络覆盖信号改善整体解决方案提供商' %>
-                            </p>
-							<a href="/solutions/antenae">View more</a>
-						</figcaption>			
-					</figure>
-				</div>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="grid wow bounceIn">
-					<figure class="effect-ruby card">
 						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.geoImg.filename ) ? solutionIndex.geoImg.filename : '../../../images/solutions/geo_1.png' %>" alt="地质环境"/>
 						<figcaption>
 							<h2><%= (solutionIndex && solutionIndex.geoTitle ) ? solutionIndex.geoTitle : '地质环境' %></h2>
@@ -73,12 +58,8 @@
 						</figcaption>			
 					</figure>
 				</div>
-            </div>
-        </div>
-    </div>
-    <div class="container secondline_solutions">
-        <div class="row justify-content-center">
-            <div class="col-md-4 col-sm-6 col-xs-12">
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
 						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.aiImg.filename ) ? solutionIndex.aiImg.filename : '../../../images/solutions/transport_index_1.jpg' %>" alt="智能交通"/>
@@ -86,12 +67,16 @@
 							<h2><%= (solutionIndex && solutionIndex.aiTitle ) ? solutionIndex.aiTitle : '智能交通' %></h2>
 							<p>
 								<%= (solutionIndex && solutionIndex.aiDesc ) ? solutionIndex.aiDesc : '24GHz雷达探测传感器，在-40℃~80℃温度范围内，100米探测距离范围内达到0.01%测距精度，产品能够使用在精密测量，汽车、船舶、飞机等动力系统防撞，无人机，反恐安检，地质勘探、边坡环境检测、水利电力、石油化工等领域，具备重要的应用价值' %>
-                            </p>
+							</p>
 							<a href="javascript:void(0)" class="devMode">View more</a>
 						</figcaption>			
 					</figure>
 				</div>
-            </div>
+			</div>
+        </div>
+    </div>
+    <div class="container secondline_solutions">
+        <div class="row justify-content-center">
             <div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="grid wow bounceIn">
 					<figure class="effect-ruby card">
@@ -105,7 +90,21 @@
 						</figcaption>			
 					</figure>
 				</div>
-            </div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<div class="grid wow bounceIn">
+					<figure class="effect-ruby card">
+						<img src="/uploads/img/solutionIndex/<%= (solutionIndex && solutionIndex.antenaeImg.filename ) ? solutionIndex.antenaeImg.filename : '../../../images/solutions/antenae_index_1.jpg' %>" alt="通信"/>
+						<figcaption>
+							<h2><%= (solutionIndex && solutionIndex.antenaeTitle ) ? solutionIndex.antenaeTitle : '通信' %></h2>
+							<p>
+								<%- (solutionIndex && solutionIndex.antenaeDesc ) ? solutionIndex.antenaeDesc : '专业基站天线厂商和无线网络覆盖信号改善整体解决方案提供商' %>
+							</p>
+							<a href="/solutions/antenae">View more</a>
+						</figcaption>			
+					</figure>
+				</div>
+			</div>
         </div>
     </div>
 </section>
