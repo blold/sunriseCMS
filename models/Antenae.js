@@ -13,8 +13,7 @@ var Types = keystone.Field.Types;
  * Antenae Model
  * ==========
  */
-
-var Antenae = new keystone.List('antenae');
+var Antenae = new keystone.List('antenae', { defaultColumns: 'antenaeTitle, mainTitle1, createdAt' });
 Antenae.add(
 	'Top Section', {
 		antenaeTitle: { type: Types.Text, default: '通讯领域', initial: true, label: '页面总标题', note: '不超过10字' },
