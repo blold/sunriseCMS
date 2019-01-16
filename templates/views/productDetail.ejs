@@ -22,7 +22,6 @@
 			</div>
 			<div class="col-md-6 col-sm-12 col-xs-12">
 				<div class="top_blc_right">
-					<% console.log(productDetail)%>
 					<h3><%= productDetail.productTitle%></h3>
 					<div class="rightDetail_blc">
 						<p><%= productDetail.productDesc%></p>
@@ -78,7 +77,9 @@
 							</tbody>
 						</table>
 						<div class="table_footer">
+							<% if(productDetail.productFile.filename ) {%>
 								<button onclick="location.href = '../public/uploads/files/products/series/<%= productDetail.productFile.filename %>'" id="download_btn" type="button" class="btn btn-raised btn-info">完整技术文档</button>
+							<% } %>
 						</div>
 				</div>
 			</div>
