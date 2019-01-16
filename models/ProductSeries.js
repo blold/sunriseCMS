@@ -38,7 +38,7 @@ var ProuctSeries = new keystone.List('product_series', { defaultColumns: 'create
 ProuctSeries.add(
 	'Main Section', {
 		productTitle: { type: Types.Text, default: '该产品名称', initial: true, label: '产品名称', note: '不超过10字' },
-		productShortDesc: { type: Types.Text, default: '该产品简述', initial: true, label: '产品名称', note: '不超过20字' },
+		productShortDesc: { type: Types.Text, default: '该产品简述', initial: true, label: '产品简述', note: '不超过20字' },
 		productType: { type: Types.Select, initial: true, options: ['通信类', '雷达类'] },
 		productDesc: { type: Types.Textarea, default: '该产品详细描述', label: '产品描述' },
 		productImg: { type: Types.File, storage: storage('img/products'), label: '该系列图片', note: '推荐像素480 × 360' },
