@@ -1,0 +1,82 @@
+.products_blc{
+	padding: 15px 0 40px;
+}
+
+body{
+	background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("/images/news/news_bg.jpg") fixed center center;
+	background-size: cover;
+}
+
+.block{
+	display: block
+}
+
+.block_white{
+	background-color: white
+}
+
+.block_header{
+	padding: 20px 0 0 40px;
+	color: #666666;
+
+	p , h4{
+		margin-bottom: 0;
+	}
+}
+
+figure{
+	width: 100%;
+	//height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+
+figure img {
+	width: 100%;
+	height: 400px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+figure:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.hover_div{
+	transition: .5s;
+}
+
+#accordion{
+	width: 100%;
+
+	button {
+		width: 100%;
+		font-size: 1.3em;
+		text-decoration: none !important
+	}
+}
+
+.card{
+	// background-color: rgba(255, 255, 255, 0.85);
+	background: rgba(246,246,246,0.5);
+
+	.card-header{
+		background: inherit;
+		padding: 0;
+		transition: 0.3s ease-in-out;
+		button{
+			padding: 1rem;
+		}
+	}
+
+	// .card-header:hover{
+	// 	border: 1px solid blue
+	// }
+}
+

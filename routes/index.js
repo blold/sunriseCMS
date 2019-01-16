@@ -41,6 +41,8 @@ exports = module.exports = function (app) {
 	app.get('/news', routes.views.news);
 	app.get('/cases', routes.views.cases);
 	app.get('/job', routes.views.job);
+	app.get('/products', routes.views.products);
+	app.get('/productDetail', routes.views.productDetail);
 	app.post('/enquiry', routes.views.enquiry);
 	// app.post('/enquiry', function(req, res){
 	// 	console.log(req.body)
@@ -67,6 +69,11 @@ exports = module.exports = function (app) {
 	});
 	app.get('/public/uploads/files/geologic/other/:id', function (req, res, next) {
 		res.download(`public/uploads/files/geologic/other/${req.params.id}`);
+	});
+
+	// Products Download
+	app.get('/public/uploads/files/products/series/:id', function (req, res, next) {
+		res.download(`public/uploads/files/products/series/${req.params.id}`);
 	});
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

@@ -1,0 +1,88 @@
+<% include ../layouts/sub/header %>
+<link href="/styles/site/productDetail.css" rel="stylesheet">
+
+
+<div class="banner container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href=".">主页</a>
+            <i class="fa fa-angle-right"></i>
+            <span>产品详细信息</span>
+        </div>
+    </div>
+</div>    
+
+<section class="productDetail_blc">
+	<div class="container top_blc">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				<div class="top_blc_left">
+					<img src="/uploads/img/products/<%= productDetail.productImg.filename || '' %>" alt="">
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				<div class="top_blc_right">
+					<% console.log(productDetail)%>
+					<h3><%= productDetail.productTitle%></h3>
+					<div class="rightDetail_blc">
+						<p><%= productDetail.productDesc%></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="detail_applications">
+			<h3>技术参数</h3>
+			<div class="detail_techs_blc">
+				<div class="container">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">参数名称</th>
+									<th scope="col">参数值</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row"><%= productDetail.tech1_name %></th>
+									<td><%= productDetail.tech1_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech2_name %></th>
+									<td><%= productDetail.tech2_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech3_name %></th>
+									<td><%= productDetail.tech3_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech4_name %></th>
+									<td><%= productDetail.tech4_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech5_name %></th>
+									<td><%= productDetail.tech5_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech6_name %></th>
+									<td><%= productDetail.tech6_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech7_name %></th>
+									<td><%= productDetail.tech7_value %></td>
+								</tr>
+								<tr>
+									<th scope="row"><%= productDetail.tech8_name %></th>
+									<td><%= productDetail.tech8_value %></td>
+								</tr>																
+							</tbody>
+						</table>
+						<div class="table_footer">
+								<button onclick="location.href = '../public/uploads/files/products/series/<%= productDetail.productFile.filename %>'" id="download_btn" type="button" class="btn btn-raised btn-info">完整技术文档</button>
+						</div>
+				</div>
+			</div>
+	</div>
+</section>
+
+<% include ../layouts/sub/footer%>

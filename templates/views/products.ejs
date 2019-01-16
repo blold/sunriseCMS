@@ -1,0 +1,93 @@
+<% include ../layouts/sub/header %>
+<link href="/styles/site/products.css" rel="stylesheet">
+
+
+<div class="banner container">
+    <div class="row">
+        <div class="col-md-12">
+            <a href=".">主页</a>
+            <i class="fa fa-angle-right"></i>
+            <span>产品信息</span>
+        </div>
+    </div>
+</div>    
+
+<section class="products_blc">
+	<div class="container">
+		<div class="row">
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+					<h5 class="mb-0">
+						<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						 <span>通信类</span>
+						</button>
+					</h5>
+					</div>
+				
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" >
+						<div class="card-body container">
+							<div class="row">
+								<% if(productSeries && productSeries.length > 0){%>
+									<% productSeries.forEach(function(el){ %>
+										<% if(el.productType === '通信类'){%>
+											<div class="col-6">
+												<div class="block block_white wow flipInX bordEffe hover_div">
+													<a href="/productDetail?id=<%= el._id %>" target="_blank">
+														<div class="block_header">
+															<h4><%= el.productTitle %></h4>
+															<p><%= el.productShortDesc %></p>
+														</div>
+														<figure>
+															<img src="/uploads/img/products/<%= el.productImg.filename || '../../../images/image_missing.png' %> " alt="">
+														</figure>
+													</a>
+												</div>
+											</div>
+										<%} %>
+									<% }) %>
+								<% }%>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+					<h5 class="mb-0">
+						<button class="btn btn-link collapsed " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						 	<span>雷达类</span>
+						</button>
+					</h5>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" >
+						<div class="card-body container">
+								<div class="row">
+									<% if(productSeries && productSeries.length > 0){%>
+										<% productSeries.forEach(function(el){ %>
+											<% if(el.productType === '雷达类'){%>
+												<div class="col-6">
+													<div class="block block_white wow flipInX bordEffe hover_div">
+														<a href="/productDetail?id=<%= el._id %>" target="_blank">
+															<div class="block_header">
+																<h4><%= el.productTitle %></h4>
+																<p><%= el.productShortDesc %></p>
+															</div>
+															<figure>
+																<img src="/uploads/img/products/<%= el.productImg.filename || '../../../images/image_missing.png' %> " alt="">
+															</figure>
+														</a>
+													</div>
+												</div>
+											<%} %>
+										<% }) %>
+									<% }%>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<% include ../layouts/sub/footer%>

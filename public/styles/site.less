@@ -34,6 +34,15 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.hover_div:hover{
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1);
+}
+
+.hover_div2:hover{
+	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 1);
+}
+
 .hover_blue:hover{
 	z-index: 2;
 	color: #fff;
@@ -241,6 +250,70 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
+
+/**
+	Border hover effect: border line 
+*/
+.btn_borderEffect span{
+	display: block;
+  padding: 25px 80px;
+}
+
+.btn_borderEffect::before, .btn_borderEffect::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #2196f3;
+}
+
+.btn_borderEffect span::before, .btn_borderEffect span::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #2196f3;
+}
+
+.btn_borderEffect:hover::before, .btn_borderEffect:hover::after{
+  width: 100%;
+}
+.btn_borderEffect:hover span::before, .btn_borderEffect:hover span::after{
+  height: 100%;
+}
+
+.btn-1::before, .btn-1::after{
+  transition-delay: 0.2s;
+}
+.btn-1 span::before, .btn-1 span::after{
+  transition-delay: 0s;
+}
+.btn-1::before{
+  right: 0;
+  top: 0;
+}
+.btn-1::after{
+  left: 0;
+  bottom: 0;
+}
+.btn-1 span::before{
+  left: 0;
+  top: 0;
+}
+.btn-1 span::after{
+  right: 0;
+  bottom: 0;
+}
+.btn-1:hover::before, .btn-1:hover::after{
+  transition-delay: 0s;
+}
+.btn-1:hover span::before, .btn-1:hover span::after{
+  transition-delay: 0.2s;
+}
+
+
 
 /*---------------*/
 /***** Lily *****/

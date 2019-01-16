@@ -77,6 +77,18 @@ keystone.set('nav', {
 			path: '/keystone/solution-indices',
 		},
 	],
+	Products: [
+		{
+			label: '产品信息-主页面',
+			key: 'products',
+			path: '/keystone/products',
+		},
+		{
+			label: '产品信息-综合产品系列',
+			key: 'product_series',
+			path: '/keystone/product_series',
+		},
+	],
 	Antenae: [
 		{
 			label: '解决方案-通信页面',
