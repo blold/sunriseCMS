@@ -64,19 +64,48 @@ figure:hover img {
 
 .card{
 	// background-color: rgba(255, 255, 255, 0.85);
-	background: rgba(246,246,246,0.5);
+	background: rgba(80, 78, 78, 0.8);
+
 
 	.card-header{
-		background: inherit;
+		background: rgba(80, 78, 78, 1);
 		padding: 0;
 		transition: 0.3s ease-in-out;
+		position: relative;
 		button{
-			padding: 1rem;
+			padding: 1.5rem;
+			color: #dbdbdb
 		}
 	}
 
-	// .card-header:hover{
-	// 	border: 1px solid blue
-	// }
+	.card-header:hover{
+		background-color: #dbdbdb;
+		z-index: 9999;
+		button{
+			color: rgb(80, 78, 78);
+		}
+	}
+
+	.card-body{
+		.row .col-6{
+			padding-bottom: 30px;
+		}
+	}
+
 }
 
+.clickArrow{
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	content: ' ';
+	border: 15px solid transparent;
+	border-top: 13px solid red;
+	width: 26px;
+	height: 24px;
+	z-index: 9999;
+	// display: block;
+	bottom: -24px;
+	margin-left: -13px;
+	// display: none;
+}
