@@ -60,6 +60,7 @@ ProuctSeries.add(
 		tech7_value: { type: Types.Text, default: '参数7参数', label: '参数7参数', note: '不超过10字' },
 		tech8_name: { type: Types.Text, default: '参数8名称', label: '参数8名称', note: '不超过10字' },
 		tech8_value: { type: Types.Text, default: '参数8参数', label: '参数8参数', note: '不超过10字' },
+		// tech_html: { type: Types.Html, wysiwyg: true },
 		productFile: { type: Types.File, storage: storage('files/products/series'), label: '该产品-完整技术文档' },
 	},
 	'Gerneral Field', {
