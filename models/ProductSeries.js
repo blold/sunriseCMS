@@ -34,7 +34,7 @@ function storage (path) {
 // };
 // getProductsInfo();
 
-var ProuctSeries = new keystone.List('product_series', { defaultColumns: 'createdAt' });
+var ProuctSeries = new keystone.List('product_series', { defaultColumns: 'productTitle, productShortDesc, productType, createdAt' });
 ProuctSeries.add(
 	'Main Section', {
 		productTitle: { type: Types.Text, default: '该产品名称', initial: true, label: '产品名称', note: '不超过10字' },
