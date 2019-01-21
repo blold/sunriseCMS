@@ -6,7 +6,7 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var MainHeader = new keystone.List('mainHeader');
+var MainHeader = new keystone.List('mainHeader', { defaultColumns: 'title, mainHeaderTitle, createdAt', sortable: true });
 MainHeader.add(
 	'Landing Field', {
 		title: { type: Types.Text, initial: true, required: true, default: 'SUNRISE' },

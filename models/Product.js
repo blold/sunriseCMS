@@ -26,7 +26,7 @@ var Types = keystone.Field.Types;
  * Produts Model
  * ==========
  */
-var Products = new keystone.List('products', { defaultColumns: 'Title, createdAt' });
+var Products = new keystone.List('products', { defaultColumns: 'Title, createdAt', sortable: true });
 Products.add(
 	'Products Section', {
 		// newsTime: { type: Types.Date, initial: true, required: true, default: moment('1995-12-25').locale('en'), index: true, label: '新闻时间' },

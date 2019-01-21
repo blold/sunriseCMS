@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var AntenaeSeries = new keystone.List('antenae_series', { defaultColumns: 'solutionTitle, solutionType, solutionImg, solutionFile, createdAt' });
+var AntenaeSeries = new keystone.List('antenae_series', { defaultColumns: 'solutionTitle, solutionType, solutionImg, solutionFile, createdAt', sortable: true });
 AntenaeSeries.add(
 	'Main Section', {
 		solutionTitle: { type: Types.Text, default: '该系列名称', initial: true, label: '通信系列-名称', note: '不超过10字' },

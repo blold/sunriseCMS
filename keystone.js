@@ -57,27 +57,27 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	users: 'users',
-	HomePage: [{
+	'管理员': 'users',
+	'主页': [{
 		label: '主页',
 		key: 'home',
 		path: '/keystone/homes',
 	}],
-	About: [
+	'关于': [
 		{
 			label: '关于',
 			key: 'about',
 			path: '/keystone/abouts',
 		},
 	],
-	SolutionIndex: [
+	'解决方案—主页': [
 		{
 			label: '解决方案-主页',
 			key: 'solutionIndex',
 			path: '/keystone/solution-indices',
 		},
 	],
-	Products: [
+	'产品信息-主页面': [
 		{
 			label: '产品信息-主页面',
 			key: 'products',
@@ -89,7 +89,7 @@ keystone.set('nav', {
 			path: '/keystone/product_series',
 		},
 	],
-	Antenae: [
+	'解决方案—通信页面': [
 		{
 			label: '解决方案-通信页面',
 			key: 'antenae',
@@ -106,7 +106,7 @@ keystone.set('nav', {
 			path: '/keystone/antenae_others',
 		},
 	],
-	Geologic: [
+	'解决方案—地质环境': [
 		{
 			label: '解决方案-地质环境页面',
 			key: 'geologic',
@@ -123,14 +123,14 @@ keystone.set('nav', {
 			path: '/keystone/geologic_others',
 		},
 	],
-	News: [
+	'新闻': [
 		{
 			label: '新闻',
 			key: 'news',
 			path: '/keystone/news',
 		},
 	],
-	Cases: [
+	'案例主页': [
 		{
 			label: '案例主页',
 			key: 'cases',
@@ -142,14 +142,14 @@ keystone.set('nav', {
 			path: '/keystone/cases_series',
 		},
 	],
-	Team: [
+	'团队': [
 		{
 			label: '团队',
 			key: 'team',
 			path: '/keystone/teams',
 		},
 	],
-	Job: [
+	'招聘主页': [
 		{
 			label: '招聘主页',
 			key: 'jobPage',
@@ -161,7 +161,7 @@ keystone.set('nav', {
 			path: '/keystone/jobs',
 		},
 	],
-	Enquiry: [
+	'咨询投诉': [
 		{
 			label: '咨询投诉',
 			key: 'enquiry',

@@ -27,7 +27,7 @@ function storage (path) {
  * ==========
  */
 
-var Team = new keystone.List('team', { defaultColumns: 'name, title, createdAt' });
+var Team = new keystone.List('team', { defaultColumns: 'name, title, createdAt', sortable: true });
 Team.add(
 	'Team Section', {
 		name: { type: Types.Text, label: '姓名', note: '姓名' },

@@ -7,10 +7,10 @@ var Enquiry = new keystone.List('enquiry', {
 });
 
 Enquiry.add({
-	name: { type: Types.Text, required: true, noedit: true },
-	email: { type: Types.Email, required: true, noedit: true },
-	subject: { type: Types.Text, required: true, noedit: true },
-	message: { type: Types.Textarea, required: true, noedit: true },
+	name: { type: Types.Text, label: '姓名', required: true, noedit: true },
+	email: { type: Types.Email, label: '邮箱', required: true, noedit: true },
+	subject: { type: Types.Text, label: '主题', required: true, noedit: true },
+	message: { type: Types.Textarea, label: '内容', required: true, noedit: true },
 	createdAt: {
 		type: Date,
 		default: Date.now,

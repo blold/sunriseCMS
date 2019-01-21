@@ -27,7 +27,7 @@ function storage (path) {
  * ==========
  */
 
-var News = new keystone.List('news', { defaultColumns: 'shortTitle, newsOrigin, createdAt' });
+var News = new keystone.List('news', { defaultColumns: 'shortTitle, newsOrigin, createdAt', sortable: true });
 News.add(
 	'News Display Section', {
 		newsTime: { type: Types.Date, initial: true, required: true, default: moment('1995-12-25').locale('en'), index: true, label: '新闻时间' },

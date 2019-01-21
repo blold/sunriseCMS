@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var GeologicSeries = new keystone.List('geologic_series', { defaultColumns: 'geologicTitle, geologicImg, geologicFile, createdAt' });
+var GeologicSeries = new keystone.List('geologic_series', { defaultColumns: 'solutionTitle, geologicFile, createdAt', sortable: true });
 GeologicSeries.add(
 	'Main Section', {
 		solutionTitle: { type: Types.Text, default: '该系列名称', initial: true, label: '通信系列-名称', note: '不超过10字' },

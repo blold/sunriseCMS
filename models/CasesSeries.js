@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var CasesSeries = new keystone.List('cases_series', { defaultColumns: 'solutionTitle, solutionImg, solutionFile, createdAt' });
+var CasesSeries = new keystone.List('cases_series', { defaultColumns: 'casesTitle, casesSubTitle, createdAt', sortable: true });
 CasesSeries.add(
 	'Cases Series Section', {
 		casesTitle: { type: Types.Text, default: '示例：通信', initial: true, label: '该案例-名称', note: '不超过15字' },

@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var About = new keystone.List('about', { defaultColumns: 'aboutTitle, vision1Title, vision2Title, vision3Title, createdAt' });
+var About = new keystone.List('about', { defaultColumns: 'aboutTitle, vision1Title, vision2Title, vision3Title, createdAt', sortable: true });
 About.add(
 	'Top Section', {
 		aboutTitle: { type: Types.Text, default: '公司介绍', initial: true, label: '页面总标题', note: '必填，不超过10字' },

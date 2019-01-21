@@ -14,7 +14,7 @@ var Storage = new keystone.Storage({
  * ==========
  */
 
-var Home = new keystone.List('home', { singular: 'home', plural: 'home', defaultColumns: 'aboutTitle, aboutDesc, aboutCompany, createdAt' });
+var Home = new keystone.List('home', { singular: 'home', plural: 'home', defaultColumns: 'aboutTitle, aboutDesc, aboutCompany, createdAt', sortable: true });
 Home.add(
 	'About Section', {
 		aboutTitle: { type: Types.Text, initial: true, required: true, default: '公司介绍', label: '关于我们-标题' },

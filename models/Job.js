@@ -6,9 +6,7 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var Job = new keystone.List('job', {
-	defaultColumns: 'jobCategory, title, site, createdAt',
-});
+var Job = new keystone.List('job', { defaultColumns: 'jobCategory, title, site, createdAt', sortable: true });
 Job.add(
 	'Main Section',
 	{

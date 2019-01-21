@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var GeologicOther = new keystone.List('geologic_other', { defaultColumns: 'otherFileName, otherFile, createdAt' });
+var GeologicOther = new keystone.List('geologic_other', { defaultColumns: 'otherFileName, otherFile, createdAt', sortable: true });
 GeologicOther.add(
 	'Main Section', {
 		otherFileName: { type: Types.Text, initial: true, default: '其他文件-名称', label: '其他文件-名称', note: '不超过10字' },

@@ -11,9 +11,9 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'geologic';
-	view.query('geologic', Geologic.model.findOne({}).sort({ createdAt: 'desc' }));
+	view.query('geologic', Geologic.model.findOne({}).sort({ sortOrder: 1 }));
 	view.on('init', function (next) {
-		GeologicSeries.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+		GeologicSeries.model.find({}).sort({ sortOrder: 1 }).exec(function (err, results) {
 			// let data = { data: results[0] };
 			// console.log(results);
 			locals.geologicSeries = results;
@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 		});
 	});
 	view.on('init', function (next) {
-		GeologicOther.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+		GeologicOther.model.find({}).sort({ sortOrder: 1 }).exec(function (err, results) {
 			// let data = { data: results[0] };
 			// console.log(results);
 			locals.geologicOthers = results;

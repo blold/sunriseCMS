@@ -13,13 +13,13 @@ exports = module.exports = function (req, res) {
 	locals.section = 'home';
 	view.query(
 		'home',
-		Home.model.findOne({}).sort({ createdAt: 'desc' })
+		Home.model.findOne({}).sort({ sortOrder: 1 })
 	);
-	// view.query('mainHeader', MainHeader.model.findOne({}).sort({ createdAt: 'desc' }));
+	// view.query('mainHeader', MainHeader.model.findOne({}).sort({ sortOrder: 1 }));
 	view.on('init', function (next) {
 		MainHeader.model
 			.find({})
-			.sort({ createdAt: 'desc' })
+			.sort({ sortOrder: 1 })
 			.exec(function (err, results) {
 				if (!err && results.length > 0) locals.header = results[0];
 				else locals.header = {};
@@ -29,7 +29,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		MainFooter.model
 			.find({})
-			.sort({ createdAt: 'desc' })
+			.sort({ sortOrder: 1 })
 			.exec(function (err, results) {
 				if (!err && results.length > 0) locals.footer = results[0];
 				else locals.footer = {};
@@ -39,7 +39,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		Home.model
 			.findOne({})
-			.sort({ createdAt: 'desc' })
+			.sort({ sortOrder: 1 })
 			.exec(function (err, result) {
 				locals.teams = null;
 				if (!err && result) {

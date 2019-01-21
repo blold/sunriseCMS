@@ -28,13 +28,13 @@ function storage (path) {
 
 // function getProductsInfo () {
 // 	let Products = keystone.list('products');
-// 	let products = Products.model.find({}).sort({ createdAt: 'desc' });
+// 	let products = Products.model.find({}).sort({ sortOrder: 1 });
 // 	products.then((d) => { return d.Title; });
 // 	// console.log(products);
 // };
 // getProductsInfo();
 
-var ProuctSeries = new keystone.List('product_series', { defaultColumns: 'productTitle, productShortDesc, productType, createdAt' });
+var ProuctSeries = new keystone.List('product_series', { defaultColumns: 'productTitle, productShortDesc, productType, createdAt', sortable: true });
 ProuctSeries.add(
 	'Main Section', {
 		productTitle: { type: Types.Text, default: '该产品名称', initial: true, label: '产品名称', note: '不超过10字' },

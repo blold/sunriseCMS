@@ -12,7 +12,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		Job.model
 			.find({})
-			.sort({ createdAt: 'desc' })
+			.sort({ sortOrder: 1 })
 			.exec(function (err, results) {
 				locals.jobs = results;
 				next();
@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		JobPage.model
 			.findOne({})
-			.sort({ createdAt: 'desc' })
+			.sort({ sortOrder: 1 })
 			.exec(function (err, results) {
 				if (!err && results) locals.jobPage = results;
 				else locals.jobPage = {};

@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var Geologic = new keystone.List('geologic', { defaultColumns: 'geologicTitle, mainTitle, createdAt' });
+var Geologic = new keystone.List('geologic', { defaultColumns: 'geologicTitle, mainTitle, createdAt', sortable: true });
 Geologic.add(
 	'Top Section', {
 		geologicTitle: { type: Types.Text, default: '地质环境', initial: true, label: '页面总标题', note: '不超过10字' },

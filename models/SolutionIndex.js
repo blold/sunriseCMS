@@ -27,7 +27,7 @@ function storage (path) {
  * ==========
  */
 
-var SolutionIndex = new keystone.List('solutionIndex', { defaultColumns: 'topDesc, antenaeTitle, geoTitle, waterTitle, aiTitle, createdAt' });
+var SolutionIndex = new keystone.List('solutionIndex', { defaultColumns: 'topDesc, antenaeTitle, geoTitle, waterTitle, aiTitle, createdAt', sortable: true });
 SolutionIndex.add(
 	'Top Section', {
 		topDesc: { type: Types.Html, wysiwyg: true, label: '解决方案页面-总描述' },

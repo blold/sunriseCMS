@@ -9,10 +9,10 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'team';
-	view.query('team', Team.model.find({}).sort({ createdAt: 'desc' }));
-	// view.query('mainHeader', MainHeader.model.findOne({}).sort({ createdAt: 'desc' }));
+	view.query('team', Team.model.find({}).sort({ sortOrder: 1 }));
+	// view.query('mainHeader', MainHeader.model.findOne({}).sort({ sortOrder: 1 }));
 	// view.on('init', function (next) {
-	// 	SolutionIndex.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+	// 	SolutionIndex.model.find({}).sort({ sortOrder: 1 }).exec(function (err, results) {
 	// 		// let data = { data: results[0] };
 	// 		locals.header = results[0];
 	// 		console.log(locals.header);

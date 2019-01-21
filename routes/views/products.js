@@ -10,9 +10,9 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'products';
-	view.query('products', Products.model.find({}).sort({ createdAt: 'desc' }));
+	view.query('products', Products.model.find({}).sort({ sortOrder: 1 }));
 	view.on('init', function (next) {
-		ProductDetail.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+		ProductDetail.model.find({}).sort({ sortOrder: 1 }).exec(function (err, results) {
 			locals.productSeries = results;
 			next();
 		});

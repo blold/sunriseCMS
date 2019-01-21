@@ -26,7 +26,7 @@ function storage (path) {
  * ==========
  */
 
-var AntenaeOther = new keystone.List('antenae_other', { defaultColumns: 'otherFileName, otherFile, createdAt' });
+var AntenaeOther = new keystone.List('antenae_other', { defaultColumns: 'otherFileName, otherFile, createdAt', sortable: true });
 AntenaeOther.add(
 	'Main Section', {
 		otherFileName: { type: Types.Text, initial: true, default: '其他文件-名称', label: '其他文件-名称', note: '不超过10字' },

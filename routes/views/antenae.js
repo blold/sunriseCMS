@@ -11,9 +11,9 @@ exports = module.exports = function (req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'antenae';
-	view.query('antenae', Antenae.model.findOne({}).sort({ createdAt: 'desc' }));
+	view.query('antenae', Antenae.model.findOne({}).sort({ sortOrder: 1 }));
 	view.on('init', function (next) {
-		AntenaeSeries.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+		AntenaeSeries.model.find({}).sort({ sortOrder: 1 }).exec(function (err, results) {
 			// let data = { data: results[0] };
 			// console.log(results);
 			locals.antenaeSeries = results;
@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 		});
 	});
 	view.on('init', function (next) {
-		AntenaeOther.model.find({}).sort({ createdAt: 'desc' }).exec(function (err, results) {
+		AntenaeOther.model.find({}).sort({ sortOrder: 1 }).exec(function (err, results) {
 			// let data = { data: results[0] };
 			// console.log(results);
 			locals.antenaeOthers = results;
