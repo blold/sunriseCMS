@@ -16,22 +16,21 @@
 	<div class="container">
 		<div class="row">
 			<div id="accordion">
-				<div class="card">
-					<div class="card-header hvr-grow" id="headingOne">
-						<h5 class="mb-0">
-							<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<span>雷达类</span>
-							</button>
-						</h5>
-						<span class="clickArrow"></span>
-					</div>
-				
-					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" >
-						<div class="card-body container">
-							<div class="row">
-								<% if(productSeries && productSeries.length > 0){%>
-									<% productSeries.forEach(function(el){ %>
-										<% if(el.productType === '雷达类'){%>
+				<% if(productDetailRadar && productDetailRadar.length > 0){%>
+					<div class="card">
+						<div class="card-header hvr-grow" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<span>雷达类</span>
+								</button>
+							</h5>
+							<span class="clickArrow"></span>
+						</div>
+					
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" >
+							<div class="card-body container">
+								<div class="row">
+										<% productDetailRadar.forEach(function(el){ %>
 											<div class="col-6">
 												<div class="block block_white wow flipInX bordEffe hover_div">
 													<a href="/productDetail?id=<%= el._id %>" target="_blank">
@@ -40,53 +39,51 @@
 															<p><%= el.productShortDesc %></p>
 														</div>
 														<figure>
-															<img src="/uploads/img/products/<%= el.productImg.filename || '../../../images/image_missing.png' %> " alt="">
+															<img src="/uploads/img/products/<%= el.productImg.filename || '../../../../images/image_missing.png' %> " alt="">
 														</figure>
 													</a>
 												</div>
 											</div>
-										<%} %>
-									<% }) %>
-								<% }%>
+										<% }) %>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="card">
-					<div class="card-header hvr-grow" id="headingTwo">
-					<h5 class="mb-0">
-						<button class="btn btn-link collapsed " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						 	<span>通信类</span>
-						</button>
-						<span></span>
-					</h5>
-					</div>
-					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" >
-						<div class="card-body container">
-								<div class="row">
-									<% if(productSeries && productSeries.length > 0){%>
-										<% productSeries.forEach(function(el){ %>
-											<% if(el.productType === '通信类'){%>
-												<div class="col-6">
-													<div class="block block_white wow flipInX bordEffe hover_div">
-														<a href="/productDetail?id=<%= el._id %>" target="_blank">
-															<div class="block_header">
-																<h4><%= el.productTitle %></h4>
-																<p><%= el.productShortDesc %></p>
-															</div>
-															<figure>
-																<img src="/uploads/img/products/<%= el.productImg.filename || '../../../images/image_missing.png' %> " alt="">
-															</figure>
-														</a>
-													</div>
-												</div>
-											<%} %>
-										<% }) %>
-									<% }%>
-								</div>
+				<% }%>
+
+				<% if(productDetailAntenae && productDetailAntenae.length > 0){%>
+						<div class="card">
+							<div class="card-header hvr-grow" id="headingTwo">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed " data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									<span>通信类</span>
+								</button>
+								<span></span>
+							</h5>
 							</div>
-					</div>
-				</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" >
+								<div class="card-body container">
+										<div class="row">
+												<% productDetailAntenae.forEach(function(el){ %>
+													<div class="col-6">
+														<div class="block block_white wow flipInX bordEffe hover_div">
+															<a href="/productDetail?id=<%= el._id %>" target="_blank">
+																<div class="block_header">
+																	<h4><%= el.productTitle %></h4>
+																	<p><%= el.productShortDesc %></p>
+																</div>
+																<figure>
+																	<img src="/uploads/img/products/<%= el.productImg.filename || '../../../../images/image_missing.png' %> " alt="">
+																</figure>
+															</a>
+														</div>
+													</div>
+												<% }) %>
+										</div>
+									</div>
+							</div>
+						</div>
+				<% }%>
 			</div>
 		</div>
 	</div>

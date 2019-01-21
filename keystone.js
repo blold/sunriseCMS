@@ -88,6 +88,16 @@ keystone.set('nav', {
 			key: 'product_series',
 			path: '/keystone/product_series',
 		},
+		{
+			label: '产品信息-雷达类',
+			key: 'products_radar',
+			path: '/keystone/products_radars',
+		},
+		{
+			label: '产品信息-通讯类',
+			key: 'products_antenae',
+			path: '/keystone/products_antenaes',
+		},
 	],
 	'解决方案—通信页面': [
 		{
