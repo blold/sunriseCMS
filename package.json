@@ -6,13 +6,13 @@
     "lint": "eslint .",
     "start": "if-env NODE_ENV=production ?? npm run start:prod || npm run start:dev",
     "dev": "NODE_ENV=development nodemon keystone.js",
-    "prod": "NODE_ENV=production pm2 start keystone.js" 
+    "prod": "NODE_ENV=production pm2 start keystone.js"
   },
   "dependencies": {
     "async": "2.1.4",
     "dotenv": "^4.0.0",
     "if-env": "^1.0.4",
-    "keystone": "4.0.0-beta.5",
+    "keystone": "^4.0.0-beta.8",
     "keystone-email": "1.0.5",
     "lodash": "^4.13.1",
     "moment": "^2.22.2",

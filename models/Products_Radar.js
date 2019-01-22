@@ -10,8 +10,8 @@ function storage (path) {
 			generateFilename: function (file, attemptNumber) {
 				var originalname = file.originalname;
 				// var filenameWithoutExtension = originalname.substring(0, originalname.lastIndexOf('.'));
-				var timestamp = new Date().getTime();
-				return `${timestamp}-${originalname}`;
+				// var timestamp = new Date().getTime();
+				return `${originalname}`;
 			},
 		},
 		schema: {
@@ -20,6 +20,17 @@ function storage (path) {
 		},
 	});
 }
+
+const storage2 = new keystone.Storage({
+	adapter: keystone.Storage.Adapters.FS,
+	fs: {
+		path: keystone.expandPath('./public/uploads'),
+		publicPath: '/public/uploads/',
+	},
+	schema: {
+		url: true,
+	},
+});
 
 /**
  * ProuctSeries Model
@@ -41,7 +52,8 @@ ProuctSeries_Radar.add(
 		productShortDesc: { type: Types.Text, default: '该产品简述', initial: true, label: '产品简述', note: '不超过20字' },
 		productType: { type: Types.Text, label: '产品类型', noedit: true, default: '雷达类' },
 		productDesc: { type: Types.Textarea, default: '该产品详细描述', label: '产品描述' },
-		productImg: { type: Types.File, storage: storage('img/products'), label: '产品图片', note: '推荐像素480 × 360' },
+		productImg: { type: Types.File, storage: storage('img/products'), thumb: true, label: '产品图片', note: '推荐像素480 × 360' },
+		productImgExist: { type: Types.File, storage: storage2, thumb: true, label: '产品图片', note: '推荐像素480 × 360' },
 	},
 	'Tech Details', {
 		tech_details: { type: Types.Html, wysiwyg: true, height: 400 },
