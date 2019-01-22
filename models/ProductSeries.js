@@ -68,4 +68,4 @@ ProuctSeries.add(
 	}
 );
 
-ProuctSeries.register();
+// ProuctSeries.register();

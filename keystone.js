@@ -83,11 +83,11 @@ keystone.set('nav', {
 			key: 'products',
 			path: '/keystone/products',
 		},
-		{
-			label: '产品信息-综合产品系列',
-			key: 'product_series',
-			path: '/keystone/product_series',
-		},
+		// {
+		// 	label: '产品信息-综合产品系列',
+		// 	key: 'product_series',
+		// 	path: '/keystone/product_series',
+		// },
 		{
 			label: '产品信息-雷达类',
 			key: 'products_radar',
