@@ -22,7 +22,7 @@
 			</div>
 			<div class="col-md-6 col-sm-12 col-xs-12">
 				<div class="top_blc_right">
-					<h3><%= productDetail.productTitle%></h3>
+					<h3 id="productName"><%= productDetail.productTitle%></h3>
 					<div class="rightDetail_blc">
 						<p><%= productDetail.productDesc%></p>
 					</div>
@@ -39,11 +39,10 @@
 									<%- productDetail.tech_details %>
 							</div>
 							<div class="col-12 tech_detail_footer ">
-									<% if(productDetail.productFile.filename ) {%>
-										<button onclick="location.href = '../public/uploads/files/products/series/<%= productDetail.productFile.filename %>'" id="download_btn" type="button" class="btn btn-raised btn-info">完整技术文档</button>
-									<% } %>
+										<!-- <button onclick="location.href = '../public/uploads/files/products/series/<%= productDetail.productFile.filename %>'" id="download_btn" type="button" class="btn btn-raised btn-info">完整技术文档</button> -->
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#documentModal" id="download_btn" type="button" class="btn btn-raised btn-info">完整技术文档</button>
 								</div>
-						</di>
+						</div>
 						<!-- <table class="table">
 							<thead>
 								<tr>
@@ -96,4 +95,193 @@
 	</div>
 </section>
 
+<div class="modal fade" id="documentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">完整技术文档-申请表</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<form action="" method="post" role="form" class="productContactForm">
+				<div class="modal-body">
+						<div class="form-group">
+							<input type="text" name="name" class="form-control" id="name" placeholder="姓名" data-rule="minlen:2" data-msg="请输入你的名字" />
+							<div class="validation"></div>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" name="email" id="email" placeholder="邮箱" data-rule="email" data-msg="请输入有效邮箱地址" />
+							<div class="validation"></div>
+						</div>
+						<div class="form-group">
+							<input type="text" pattern="\d*" class="form-control" name="phone" id="phone" placeholder="手机号码(可选)" size="11" maxlength="11" data-msg="请输入11位手机号"/>
+							<div class="validation"></div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="subject" id="subject" placeholder="主题" data-rule="minlen:2" data-msg="请输入至少四个字" readonly/>
+							<div class="validation"></div>
+						</div>
+						<div class="form-group">
+							<textarea id="askingInfo" class="form-control" name="message" rows="5" data-msg="请输入内容信息" placeholder="其他信息"></textarea>
+							<div class="validation"></div>
+						</div>
+						<!-- <div class="text-center"><button style="width: 100%" type="submit">发送</button></div> -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" >关闭</button>
+					<button type="submit" class="btn btn-primary" >提交</button>
+				</div>
+			</form>
+    </div>
+  </div>
+</div>
+
 <% include ../layouts/sub/footer%>
+
+
+<script>
+
+	$(document).on('click', '#download_btn', function(e) {
+		var productName = document.getElementById('productName').textContent;
+		document.getElementById('subject').value = '申请完整技术文档：' + productName;
+		document.getElementById('askingInfo').value = '申请完整技术文档：' + productName;
+	})
+
+	jQuery(document).ready(function ($) {
+    "use strict";
+    $('form.productContactForm').submit(function () {
+        var f = $(this).find('.form-group'),
+            ferror = false,
+            emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+
+        f.children('input').each(function () {
+            // run all inputs
+            var i = $(this); // current input
+            var rule = i.attr('data-rule');
+            if (rule !== undefined) {
+							var ierror = false; // error flag for current input
+							var pos = rule.indexOf(':', 0);
+							var exp;
+							if (pos >= 0) {
+									exp = rule.substr(pos + 1, rule.length);
+									rule = rule.substr(0, pos);
+							} else {
+									rule = rule.substr(pos + 1, rule.length);
+							}
+							switch (rule) {
+								case 'required':
+										if (i.val() === '') {
+												ferror = ierror = true;
+										}
+										break;
+								case 'minlen':
+										if (i.val().length < parseInt(exp)) {
+												ferror = ierror = true;
+										}
+										break;
+
+								case 'email':
+										if (!emailExp.test(i.val())) {
+												ferror = ierror = true;
+										}
+										break;
+
+								case 'checked':
+										if (!i.attr('checked')) {
+												ferror = ierror = true;
+										}
+										break;
+
+								case 'regexp':
+										exp = new RegExp(exp);
+										if (!exp.test(i.val())) {
+												ferror = ierror = true;
+										}
+										break;
+							}
+							i.next('.validation').html(ierror ? i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input' : '').show('blind');
+            }
+        });
+        f.children('textarea').each(function () {
+            // run all inputs
+
+            var i = $(this); // current input
+            var rule = i.attr('data-rule');
+
+            if (rule !== undefined) {
+                var ierror = false; // error flag for current input
+                var pos = rule.indexOf(':', 0);
+                var exp;
+                if (pos >= 0) {
+                    exp = rule.substr(pos + 1, rule.length);
+                    rule = rule.substr(0, pos);
+                } else {
+                    rule = rule.substr(pos + 1, rule.length);
+                }
+
+                switch (rule) {
+                    case 'required':
+                        if (i.val() === '') {
+                            ferror = ierror = true;
+                        }
+                        break;
+
+                    case 'minlen':
+                        if (i.val().length < parseInt(exp)) {
+                            ferror = ierror = true;
+                        }
+                        break;
+                }
+                i.next('.validation').html(ierror ? i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input' : '').show('blind');
+            }
+        });
+        var str;
+        if (ferror) return false;else str = $(this).serialize();
+        // console.log('str: ' + str);		
+        $.ajax({
+					type: "POST",
+					url: window.location.origin + "/enquiry",
+					data: str,
+					success: function success(msg) {
+						console.log("-------ajax---------")
+						// console.log(msg);
+						if (msg == 'OK') {
+								console.log('200')
+								$('.contactForm').find("input, textarea").val("");
+								showResult();
+						} else {
+								$('.contactForm').find("input, textarea").val("");
+								showResult(msg);
+						}
+					},
+					error: function (err){
+						console.log("------ajax error-------")
+						console.log(err);
+						showResult(err);
+					}
+        });
+        return false;
+    });
+	});
+
+	function showResult(err){
+		if (!err){
+				iziToast.show({
+				theme: 'dark',
+				title: '谢谢',
+				message: '我们会尽快联系您！',
+				position: 'center',
+				progressBarColor: 'rgb(0, 255, 184)'
+			});
+		}else {
+			iziToast.error({
+				title: 'Ops!',
+				message: '提交不成功。' + err,
+				position: 'center',
+				progressBarColor: 'rgb(0, 255, 184)'
+			});
+		}
+	}
+
+</script>
