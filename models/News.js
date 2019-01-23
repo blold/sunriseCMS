@@ -30,7 +30,7 @@ function storage (path) {
 var News = new keystone.List('news', { defaultColumns: 'shortTitle, newsOrigin, createdAt', sortable: true });
 News.add(
 	'News Display Section', {
-		newsTime: { type: Types.Date, initial: true, required: true, default: moment('1995-12-25').locale('en'), index: true, label: '新闻时间' },
+		newsTime: { type: Types.Date, initial: true, required: true, default: moment(new Date()), index: true, label: '新闻时间' },
 		shortTitle: { type: Types.Text, initial: true, required: true, default: '不超过20字', label: '新闻标题' },
 		displayImg: { type: Types.File, storage: storage('img/news'), label: '新闻展示图片' },
 	},
