@@ -107,11 +107,11 @@
 			<form action="" method="post" role="form" class="productContactForm">
 				<div class="modal-body">
 						<div class="form-group">
-							<input type="text" name="name" class="form-control" id="name" placeholder="姓名" data-rule="minlen:2" data-msg="请输入你的名字" />
+							<input type="text" name="name" class="form-control" id="name" placeholder="姓名(必填)" data-rule="minlen:2" data-msg="请输入你的名字，两个字以上" />
 							<div class="validation"></div>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control" name="email" id="email" placeholder="邮箱" data-rule="email" data-msg="请输入有效邮箱地址" />
+							<input type="email" class="form-control" name="email" id="email" placeholder="邮箱(必填)" data-rule="email" data-msg="请输入有效邮箱地址" />
 							<div class="validation"></div>
 						</div>
 						<div class="form-group">
@@ -160,47 +160,47 @@
             var i = $(this); // current input
             var rule = i.attr('data-rule');
             if (rule !== undefined) {
-							var ierror = false; // error flag for current input
-							var pos = rule.indexOf(':', 0);
-							var exp;
-							if (pos >= 0) {
-									exp = rule.substr(pos + 1, rule.length);
-									rule = rule.substr(0, pos);
-							} else {
-									rule = rule.substr(pos + 1, rule.length);
+				var ierror = false; // error flag for current input
+				var pos = rule.indexOf(':', 0);
+				var exp;
+				if (pos >= 0) {
+						exp = rule.substr(pos + 1, rule.length);
+						rule = rule.substr(0, pos);
+				} else {
+						rule = rule.substr(pos + 1, rule.length);
+				}
+				switch (rule) {
+					case 'required':
+							if (i.val() === '') {
+									ferror = ierror = true;
 							}
-							switch (rule) {
-								case 'required':
-										if (i.val() === '') {
-												ferror = ierror = true;
-										}
-										break;
-								case 'minlen':
-										if (i.val().length < parseInt(exp)) {
-												ferror = ierror = true;
-										}
-										break;
-
-								case 'email':
-										if (!emailExp.test(i.val())) {
-												ferror = ierror = true;
-										}
-										break;
-
-								case 'checked':
-										if (!i.attr('checked')) {
-												ferror = ierror = true;
-										}
-										break;
-
-								case 'regexp':
-										exp = new RegExp(exp);
-										if (!exp.test(i.val())) {
-												ferror = ierror = true;
-										}
-										break;
+							break;
+					case 'minlen':
+							if (i.val().length < parseInt(exp)) {
+									ferror = ierror = true;
 							}
-							i.next('.validation').html(ierror ? i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input' : '').show('blind');
+							break;
+
+					case 'email':
+							if (!emailExp.test(i.val())) {
+									ferror = ierror = true;
+							}
+							break;
+
+					case 'checked':
+							if (!i.attr('checked')) {
+									ferror = ierror = true;
+							}
+							break;
+
+					case 'regexp':
+							exp = new RegExp(exp);
+							if (!exp.test(i.val())) {
+									ferror = ierror = true;
+							}
+							break;
+				}
+				i.next('.validation').html(ierror ? i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input' : '').show('blind');
             }
         });
         f.children('textarea').each(function () {
@@ -240,26 +240,26 @@
         if (ferror) return false;else str = $(this).serialize();
         // console.log('str: ' + str);		
         $.ajax({
-					type: "POST",
-					url: window.location.origin + "/enquiry",
-					data: str,
-					success: function success(msg) {
-						console.log("-------ajax---------")
-						// console.log(msg);
-						if (msg == 'OK') {
-								console.log('200')
-								$('.contactForm').find("input, textarea").val("");
-								showResult();
-						} else {
-								$('.contactForm').find("input, textarea").val("");
-								showResult(msg);
-						}
-					},
-					error: function (err){
-						console.log("------ajax error-------")
-						console.log(err);
-						showResult(err);
-					}
+			type: "POST",
+			url: window.location.origin + "/enquiry",
+			data: str,
+			success: function success(msg) {
+				console.log("-------ajax---------")
+				// console.log(msg);
+				if (msg == 'OK') {
+						console.log('200')
+						$('.contactForm').find("input, textarea").val("");
+						showResult();
+				} else {
+						$('.contactForm').find("input, textarea").val("");
+						showResult(msg);
+				}
+			},
+			error: function (err){
+				console.log("------ajax error-------")
+				console.log(err);
+				showResult(err);
+			}
         });
         return false;
     });
@@ -267,20 +267,20 @@
 
 	function showResult(err){
 		if (!err){
-				iziToast.show({
-				theme: 'dark',
-				title: '谢谢',
-				message: '我们会尽快联系您！',
-				position: 'center',
-				progressBarColor: 'rgb(0, 255, 184)'
-			});
-		}else {
-			iziToast.error({
-				title: 'Ops!',
-				message: '提交不成功。' + err,
-				position: 'center',
-				progressBarColor: 'rgb(0, 255, 184)'
-			});
+			iziToast.show({
+			theme: 'dark',
+			title: '谢谢',
+			message: '我们会尽快联系您！',
+			position: 'center',
+			progressBarColor: 'rgb(0, 255, 184)'
+		});
+	}else {
+		iziToast.error({
+			title: 'Ops!',
+			message: '提交不成功。' + err,
+			position: 'center',
+			progressBarColor: 'rgb(0, 255, 184)'
+		});
 		}
 	}
 
