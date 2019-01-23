@@ -17,8 +17,11 @@
     "lodash": "^4.13.1",
     "moment": "^2.22.2",
     "node-env-run": "^3.0.2",
+    "nodemailer": "^5.1.1",
     "pm2": "^3.2.2",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.6.0"
   },
   "devDependencies": {
     "ejs-locals": "^1.0.2",
