@@ -26,7 +26,7 @@ keystone.init({
 	'signin logo': ['/images/logo/logo.png', 200, 200],
 	'wysiwyg skin': 'lightgray',
 
-	'port': (process.env.NODE_ENV === 'development') ? 4000 : 8080,
+	'port': (process.env.NODE_ENV === 'development') ? 4000 : 80,
 	'env': process.env.NODE_ENV,
 
 	'emails': 'templates/emails',

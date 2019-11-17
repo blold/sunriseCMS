@@ -21,6 +21,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+
 // var fs = require('fs');
 
 // Common Middleware
@@ -73,7 +74,11 @@ exports = module.exports = function (app) {
 	});
 
 	// Products Download
-	app.get('/public/uploads/files/products/series/:id', function (req, res, next) {
+	app.get('/public/uploads/files/products/series/:id', function (
+		req,
+		res,
+		next
+	) {
 		res.download(`public/uploads/files/products/series/${req.params.id}`);
 	});
 
